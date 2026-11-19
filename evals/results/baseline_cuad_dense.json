@@ -1,0 +1,1346 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-11-19T12:26:14.311163+00:00",
+    "strategy": "dense_bge_small",
+    "search_mode": "dense",
+    "use_reranker": false,
+    "rerank_top_n": null,
+    "mode": "direct",
+    "project_id": 2,
+    "top_k": 5,
+    "num_queries": 50,
+    "num_answerable": 42,
+    "num_unanswerable": 8,
+    "dataset_path": "/media/data/Courses/AI/NLP/RAG/mini-rag/evals/dataset_cuad.json"
+  },
+  "summary": {
+    "hit_rate_at_5": 0.9286,
+    "mrr_at_5": 0.8536,
+    "keyword_recall_at_5": 0.6825,
+    "avg_latency_ms": 222.72,
+    "unanswerable_avg_top_score": 0.7425
+  },
+  "queries": [
+    {
+      "id": "cuad_01",
+      "question": "In the VitalibisInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "governed",
+        "State"
+      ],
+      "expected_keywords": [
+        "governed",
+        "State",
+        "California",
+        "giving"
+      ],
+      "latency_ms": 7697.66,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6721,
+        0.659,
+        0.6583,
+        0.6468,
+        0.6453
+      ]
+    },
+    {
+      "id": "cuad_02",
+      "question": "In the RareElementResourcesLtd contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 0.2,
+      "first_relevant_rank": 5,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "construed",
+        "accordance"
+      ],
+      "expected_keywords": [
+        "New York",
+        "United States",
+        "construed",
+        "accordance"
+      ],
+      "latency_ms": 225.63,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7018,
+        0.6888,
+        0.6823,
+        0.6715,
+        0.6699
+      ]
+    },
+    {
+      "id": "cuad_03",
+      "question": "In the SimplicityEsportsGamingCompany contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 0.2,
+      "first_relevant_rank": 5,
+      "keyword_recall": 0.25,
+      "matched_keywords": [
+        "governed"
+      ],
+      "expected_keywords": [
+        "New York",
+        "expressly",
+        "agreed",
+        "governed"
+      ],
+      "latency_ms": 69.19,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7117,
+        0.7004,
+        0.6933,
+        0.6805,
+        0.6611
+      ]
+    },
+    {
+      "id": "cuad_04",
+      "question": "In the HfEnterprisesInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "New York",
+        "governed",
+        "accordance",
+        "State"
+      ],
+      "expected_keywords": [
+        "New York",
+        "governed",
+        "accordance",
+        "State"
+      ],
+      "latency_ms": 42.91,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6726,
+        0.6679,
+        0.6677,
+        0.6669,
+        0.6637
+      ]
+    },
+    {
+      "id": "cuad_05",
+      "question": "In the PlayboyEnterprisesInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "governed",
+        "construed",
+        "accordance",
+        "Illinois"
+      ],
+      "expected_keywords": [
+        "governed",
+        "construed",
+        "accordance",
+        "Illinois"
+      ],
+      "latency_ms": 39.15,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7395,
+        0.6841,
+        0.6806,
+        0.6752,
+        0.6714
+      ]
+    },
+    {
+      "id": "cuad_06",
+      "question": "In the WestPharmaceuticalServicesInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "Buyer",
+        "governed"
+      ],
+      "expected_keywords": [
+        "ExxonMobil Selling Affiliate",
+        "2010",
+        "Buyer",
+        "governed"
+      ],
+      "latency_ms": 213.32,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6886,
+        0.6874,
+        0.678,
+        0.6697,
+        0.6692
+      ]
+    },
+    {
+      "id": "cuad_07",
+      "question": "In the CardlyticsInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [
+        "North Carolina",
+        "governed",
+        "internal",
+        "regarding"
+      ],
+      "latency_ms": 39.5,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7081,
+        0.6798,
+        0.6671,
+        0.6537,
+        0.653
+      ]
+    },
+    {
+      "id": "cuad_08",
+      "question": "In the ParatekPharmaceuticalsInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "governed",
+        "construed",
+        "accordance",
+        "substantive"
+      ],
+      "expected_keywords": [
+        "governed",
+        "construed",
+        "accordance",
+        "substantive"
+      ],
+      "latency_ms": 38.84,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7369,
+        0.7216,
+        0.714,
+        0.7022,
+        0.7004
+      ]
+    },
+    {
+      "id": "cuad_09",
+      "question": "In the AudibleInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "construed",
+        "accordance"
+      ],
+      "expected_keywords": [
+        "interpreted",
+        "construed",
+        "enforced",
+        "accordance"
+      ],
+      "latency_ms": 48.97,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6858,
+        0.6677,
+        0.6668,
+        0.6498,
+        0.6454
+      ]
+    },
+    {
+      "id": "cuad_10",
+      "question": "In the IntegrityFunds contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.25,
+      "matched_keywords": [
+        "State"
+      ],
+      "expected_keywords": [
+        "construed",
+        "accordance",
+        "State",
+        "Kansas"
+      ],
+      "latency_ms": 35.46,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6831,
+        0.6829,
+        0.6779,
+        0.6691,
+        0.668
+      ]
+    },
+    {
+      "id": "cuad_11",
+      "question": "In the VitalibisInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.25,
+      "matched_keywords": [
+        "VITALIBIS"
+      ],
+      "expected_keywords": [
+        "VITALIBIS INC",
+        "VOTOCAST",
+        "Licensee",
+        "VITALIBIS"
+      ],
+      "latency_ms": 35.56,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.687,
+        0.6709,
+        0.6573,
+        0.655,
+        0.6544
+      ]
+    },
+    {
+      "id": "cuad_12",
+      "question": "In the RareElementResourcesLtd contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Rare Element Resources Ltd",
+        "Element",
+        "Resources",
+        "Investor"
+      ],
+      "expected_keywords": [
+        "Rare Element Resources Ltd",
+        "Element",
+        "Resources",
+        "Investor"
+      ],
+      "latency_ms": 35.35,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.703,
+        0.6989,
+        0.6979,
+        0.6958,
+        0.6935
+      ]
+    },
+    {
+      "id": "cuad_13",
+      "question": "In the SimplicityEsportsGamingCompany contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Smaaash Entertainment Private Limited",
+        "Capital",
+        "Acquisition",
+        "Franchisor"
+      ],
+      "expected_keywords": [
+        "Smaaash Entertainment Private Limited",
+        "Capital",
+        "Acquisition",
+        "Franchisor"
+      ],
+      "latency_ms": 45.44,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7369,
+        0.7313,
+        0.7226,
+        0.707,
+        0.7068
+      ]
+    },
+    {
+      "id": "cuad_14",
+      "question": "In the HfEnterprisesInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [
+        "Developer",
+        "HotApp",
+        "International",
+        "Document"
+      ],
+      "latency_ms": 50.96,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6766,
+        0.6741,
+        0.6734,
+        0.6714,
+        0.6707
+      ]
+    },
+    {
+      "id": "cuad_15",
+      "question": "In the PlayboyEnterprisesInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.75,
+      "matched_keywords": [
+        "Playboy",
+        "Client",
+        "include"
+      ],
+      "expected_keywords": [
+        "Playboy",
+        "Client",
+        "include",
+        "affiliates"
+      ],
+      "latency_ms": 91.23,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7224,
+        0.7121,
+        0.7063,
+        0.6975,
+        0.6974
+      ]
+    },
+    {
+      "id": "cuad_16",
+      "question": "In the WestPharmaceuticalServicesInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.25,
+      "matched_keywords": [
+        "West Pharmaceutical Services"
+      ],
+      "expected_keywords": [
+        "West Pharmaceutical Services",
+        "ExxonMobil Selling Affiliate",
+        "ExxonMobil Selling Affiliates",
+        "Buyer Affiliate"
+      ],
+      "latency_ms": 500.86,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7027,
+        0.6979,
+        0.6975,
+        0.6835,
+        0.6786
+      ]
+    },
+    {
+      "id": "cuad_17",
+      "question": "In the CardlyticsInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "America",
+        "Supplier",
+        "Cardlytics"
+      ],
+      "expected_keywords": [
+        "America",
+        "Supplier",
+        "Cardlytics"
+      ],
+      "latency_ms": 38.29,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.733,
+        0.6801,
+        0.6791,
+        0.6774,
+        0.6759
+      ]
+    },
+    {
+      "id": "cuad_18",
+      "question": "In the ParatekPharmaceuticalsInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Paratek Pharmaceuticals",
+        "Paratek",
+        "Pharmaceuticals",
+        "Customer"
+      ],
+      "expected_keywords": [
+        "Paratek Pharmaceuticals",
+        "Paratek",
+        "Pharmaceuticals",
+        "Customer"
+      ],
+      "latency_ms": 32.11,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7739,
+        0.7406,
+        0.7355,
+        0.7336,
+        0.7333
+      ]
+    },
+    {
+      "id": "cuad_19",
+      "question": "In the AudibleInc contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Audible Inc",
+        "Commerce Services",
+        "Audible",
+        "Amazon"
+      ],
+      "expected_keywords": [
+        "Audible Inc",
+        "Commerce Services",
+        "Audible",
+        "Amazon"
+      ],
+      "latency_ms": 33.65,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.705,
+        0.7018,
+        0.6963,
+        0.6922,
+        0.6883
+      ]
+    },
+    {
+      "id": "cuad_20",
+      "question": "In the IntegrityFunds contract (Parties), the two or more parties who signed the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Integrity Short Term Government",
+        "Integrity",
+        "Short",
+        "Government"
+      ],
+      "expected_keywords": [
+        "Integrity Short Term Government",
+        "Integrity",
+        "Short",
+        "Government"
+      ],
+      "latency_ms": 33.66,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.6848,
+        0.6823,
+        0.682,
+        0.6809,
+        0.6756
+      ]
+    },
+    {
+      "id": "cuad_21",
+      "question": "In the VitalibisInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "18"
+      ],
+      "expected_keywords": [
+        "14",
+        "18"
+      ],
+      "latency_ms": 35.63,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7333,
+        0.7258,
+        0.7168,
+        0.7132,
+        0.7127
+      ]
+    },
+    {
+      "id": "cuad_22",
+      "question": "In the RareElementResourcesLtd contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "2017"
+      ],
+      "expected_keywords": [
+        "2017",
+        "October"
+      ],
+      "latency_ms": 31.5,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7662,
+        0.7569,
+        0.7384,
+        0.7324,
+        0.7299
+      ]
+    },
+    {
+      "id": "cuad_23",
+      "question": "In the SimplicityEsportsGamingCompany contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "2018"
+      ],
+      "expected_keywords": [
+        "2018",
+        "November"
+      ],
+      "latency_ms": 31.69,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7604,
+        0.7581,
+        0.7407,
+        0.732,
+        0.7313
+      ]
+    },
+    {
+      "id": "cuad_24",
+      "question": "In the HfEnterprisesInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [
+        "2018",
+        "March"
+      ],
+      "latency_ms": 32.65,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7308,
+        0.7287,
+        0.723,
+        0.7191,
+        0.7157
+      ]
+    },
+    {
+      "id": "cuad_25",
+      "question": "In the PlayboyEnterprisesInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.6666666666666666,
+      "matched_keywords": [
+        "15",
+        "2008"
+      ],
+      "expected_keywords": [
+        "15",
+        "2008",
+        "January"
+      ],
+      "latency_ms": 31.54,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.757,
+        0.7495,
+        0.7484,
+        0.7459,
+        0.7411
+      ]
+    },
+    {
+      "id": "cuad_26",
+      "question": "In the WestPharmaceuticalServicesInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "10",
+        "2020",
+        "January"
+      ],
+      "expected_keywords": [
+        "10",
+        "2020",
+        "January"
+      ],
+      "latency_ms": 39.8,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.8099,
+        0.7361,
+        0.736,
+        0.7276,
+        0.727
+      ]
+    },
+    {
+      "id": "cuad_27",
+      "question": "In the CardlyticsInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "11",
+        "10"
+      ],
+      "expected_keywords": [
+        "11",
+        "10"
+      ],
+      "latency_ms": 31.38,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.8295,
+        0.7673,
+        0.7472,
+        0.7387,
+        0.7349
+      ]
+    },
+    {
+      "id": "cuad_28",
+      "question": "In the ParatekPharmaceuticalsInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "30",
+        "2016",
+        "December"
+      ],
+      "expected_keywords": [
+        "30",
+        "2016",
+        "December"
+      ],
+      "latency_ms": 32.94,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.8173,
+        0.7889,
+        0.7753,
+        0.7713,
+        0.7678
+      ]
+    },
+    {
+      "id": "cuad_29",
+      "question": "In the AudibleInc contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "30",
+        "2000",
+        "January"
+      ],
+      "expected_keywords": [
+        "30",
+        "2000",
+        "January"
+      ],
+      "latency_ms": 33.63,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7422,
+        0.7383,
+        0.7288,
+        0.7187,
+        0.7108
+      ]
+    },
+    {
+      "id": "cuad_30",
+      "question": "In the IntegrityFunds contract (Agreement Date), the date of the contract?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "18",
+        "2020",
+        "January"
+      ],
+      "expected_keywords": [
+        "18",
+        "2020",
+        "January"
+      ],
+      "latency_ms": 56.09,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7479,
+        0.7413,
+        0.7366,
+        0.7332,
+        0.7292
+      ]
+    },
+    {
+      "id": "cuad_31",
+      "question": "In the VitalibisInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "The Effective Date",
+        "Effective",
+        "later",
+        "dates"
+      ],
+      "expected_keywords": [
+        "The Effective Date",
+        "Effective",
+        "later",
+        "dates"
+      ],
+      "latency_ms": 42.17,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7325,
+        0.7293,
+        0.7236,
+        0.7184,
+        0.7169
+      ]
+    },
+    {
+      "id": "cuad_32",
+      "question": "In the RareElementResourcesLtd contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Effective Date",
+        "Closing Date",
+        "Investment Agreement",
+        "Effective"
+      ],
+      "expected_keywords": [
+        "Effective Date",
+        "Closing Date",
+        "Investment Agreement",
+        "Effective"
+      ],
+      "latency_ms": 40.01,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7714,
+        0.7493,
+        0.7155,
+        0.7131,
+        0.7129
+      ]
+    },
+    {
+      "id": "cuad_33",
+      "question": "In the SimplicityEsportsGamingCompany contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "2018"
+      ],
+      "expected_keywords": [
+        "2018",
+        "November"
+      ],
+      "latency_ms": 55.41,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7302,
+        0.7276,
+        0.7216,
+        0.717,
+        0.7115
+      ]
+    },
+    {
+      "id": "cuad_34",
+      "question": "In the HfEnterprisesInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "2018",
+        "March"
+      ],
+      "expected_keywords": [
+        "2018",
+        "March"
+      ],
+      "latency_ms": 41.42,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7649,
+        0.745,
+        0.7358,
+        0.735,
+        0.7349
+      ]
+    },
+    {
+      "id": "cuad_35",
+      "question": "In the PlayboyEnterprisesInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 0.2,
+      "first_relevant_rank": 5,
+      "keyword_recall": 0.3333333333333333,
+      "matched_keywords": [
+        "2008"
+      ],
+      "expected_keywords": [
+        "15",
+        "2008",
+        "January"
+      ],
+      "latency_ms": 44.6,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7561,
+        0.7395,
+        0.7381,
+        0.7332,
+        0.7294
+      ]
+    },
+    {
+      "id": "cuad_36",
+      "question": "In the WestPharmaceuticalServicesInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "Effective Date",
+        "2019",
+        "Effective",
+        "January"
+      ],
+      "expected_keywords": [
+        "Effective Date",
+        "2019",
+        "Effective",
+        "January"
+      ],
+      "latency_ms": 51.22,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.8014,
+        0.7439,
+        0.7247,
+        0.709,
+        0.7049
+      ]
+    },
+    {
+      "id": "cuad_37",
+      "question": "In the CardlyticsInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "11",
+        "10"
+      ],
+      "expected_keywords": [
+        "11",
+        "10"
+      ],
+      "latency_ms": 222.47,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7988,
+        0.7643,
+        0.7395,
+        0.7263,
+        0.7252
+      ]
+    },
+    {
+      "id": "cuad_38",
+      "question": "In the ParatekPharmaceuticalsInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 1.0,
+      "matched_keywords": [
+        "30",
+        "2016",
+        "December"
+      ],
+      "expected_keywords": [
+        "30",
+        "2016",
+        "December"
+      ],
+      "latency_ms": 46.17,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.804,
+        0.7582,
+        0.7372,
+        0.7371,
+        0.7289
+      ]
+    },
+    {
+      "id": "cuad_39",
+      "question": "In the AudibleInc contract (Effective Date), the date when the contract is effective?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.6666666666666666,
+      "matched_keywords": [
+        "30",
+        "2000"
+      ],
+      "expected_keywords": [
+        "30",
+        "2000",
+        "January"
+      ],
+      "latency_ms": 48.26,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7253,
+        0.7237,
+        0.7174,
+        0.7046,
+        0.7017
+      ]
+    },
+    {
+      "id": "cuad_40",
+      "question": "In the IntegrityFunds contract (Expiration Date), on what date will the contract's initial term expire?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.25,
+      "matched_keywords": [
+        "18"
+      ],
+      "expected_keywords": [
+        "Qualified Trustees",
+        "18",
+        "2022",
+        "1940"
+      ],
+      "latency_ms": 49.54,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7306,
+        0.7246,
+        0.7241,
+        0.7117,
+        0.7107
+      ]
+    },
+    {
+      "id": "cuad_41",
+      "question": "In the VitalibisInc contract (Expiration Date), on what date will the contract's initial term expire?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "first_relevant_rank": 1,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "Effective Date",
+        "Initial Term"
+      ],
+      "expected_keywords": [
+        "Effective Date",
+        "Initial Term",
+        "1.3",
+        "10.1"
+      ],
+      "latency_ms": 78.69,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7259,
+        0.6907,
+        0.6894,
+        0.6882,
+        0.6859
+      ]
+    },
+    {
+      "id": "cuad_42",
+      "question": "In the RareElementResourcesLtd contract (Expiration Date), on what date will the contract's initial term expire?",
+      "is_impossible": false,
+      "hit_at_k": 1.0,
+      "reciprocal_rank": 0.25,
+      "first_relevant_rank": 4,
+      "keyword_recall": 0.5,
+      "matched_keywords": [
+        "Effective Date",
+        "earlier"
+      ],
+      "expected_keywords": [
+        "Article XVI",
+        "Effective Date",
+        "United States",
+        "earlier"
+      ],
+      "latency_ms": 50.72,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7706,
+        0.7613,
+        0.7411,
+        0.7251,
+        0.7166
+      ]
+    },
+    {
+      "id": "cuad_43",
+      "question": "In the SimplicityEsportsGamingCompany contract (Price Restrictions), is there a restriction on the  ability of a party to raise or reduce prices of technology, goods, or  services provided?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 61.68,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7165,
+        0.7038,
+        0.6911,
+        0.6895,
+        0.6885
+      ]
+    },
+    {
+      "id": "cuad_44",
+      "question": "In the HfEnterprisesInc contract (Audit Rights), does a party have the right to  audit the books, records, or physical locations of the counterparty to ensure compliance with the contract?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 86.7,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.716,
+        0.7138,
+        0.7113,
+        0.7094,
+        0.7075
+      ]
+    },
+    {
+      "id": "cuad_45",
+      "question": "In the PlayboyEnterprisesInc contract (Notice Period To Terminate Renewal), what is the notice period required to terminate renewal?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 49.78,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.8128,
+        0.7487,
+        0.7325,
+        0.7295,
+        0.7243
+      ]
+    },
+    {
+      "id": "cuad_46",
+      "question": "In the CardlyticsInc contract (Rofr/Rofo/Rofn), is there a clause granting one party a right of first refusal, right of first offer or right of first negotiation to purchase, license, market, or distribute equity interest, technology, assets, products or services?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 74.94,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7248,
+        0.7143,
+        0.7134,
+        0.71,
+        0.7054
+      ]
+    },
+    {
+      "id": "cuad_47",
+      "question": "In the ParatekPharmaceuticalsInc contract (Rofr/Rofo/Rofn), is there a clause granting one party a right of first refusal, right of first offer or right of first negotiation to purchase, license, market, or distribute equity interest, technology, assets, products or services?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 251.3,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7767,
+        0.7582,
+        0.7526,
+        0.7471,
+        0.7464
+      ]
+    },
+    {
+      "id": "cuad_48",
+      "question": "In the WestPharmaceuticalServicesInc contract (Joint Ip Ownership), is there any clause providing for joint or shared ownership of intellectual property between the parties to the contract?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 53.16,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7318,
+        0.7232,
+        0.722,
+        0.7111,
+        0.7072
+      ]
+    },
+    {
+      "id": "cuad_49",
+      "question": "In the IntegrityFunds contract (Post-Termination Services), is a party subject to obligations after the termination or expiration of a contract, including any post-termination transition, payment, transfer of IP, wind-down, last-buy, or similar commitments?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 42.95,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7202,
+        0.7077,
+        0.7022,
+        0.6937,
+        0.6921
+      ]
+    },
+    {
+      "id": "cuad_50",
+      "question": "In the RareElementResourcesLtd contract (Revenue/Profit Sharing), is one party required to share revenue or profit with the counterparty for any technology, goods, or services?",
+      "is_impossible": true,
+      "hit_at_k": 0.0,
+      "reciprocal_rank": 0.0,
+      "first_relevant_rank": null,
+      "keyword_recall": 0.0,
+      "matched_keywords": [],
+      "expected_keywords": [],
+      "latency_ms": 40.09,
+      "retrieved_count": 5,
+      "retrieved_scores": [
+        0.7411,
+        0.7401,
+        0.7103,
+        0.6992,
+        0.6944
+      ]
+    }
+  ]
+}

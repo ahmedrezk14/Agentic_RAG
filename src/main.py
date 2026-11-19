@@ -3,6 +3,7 @@ from routes import base, data, nlp
 from helpers.config import get_settings
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
+from stores.reranker.CrossEncoderReranker import CrossEncoderReranker
 from stores.llm.templates.template_parser import TemplateParser
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
@@ -37,6 +38,9 @@ async def startup_span():
     await app.vector_db_clinet.connect()
 
     app.template_parser=TemplateParser(language=settings.PRIMARY_LANG,default_language=settings.DEFAULT_LANG)
+
+    # reranker client
+    app.reranker_client=CrossEncoderReranker(model_id=settings.RERANKER_MODEL)
 
 
 async def shutdown_span():

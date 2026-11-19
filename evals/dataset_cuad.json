@@ -1,0 +1,787 @@
+[
+  {
+    "id": "cuad_01",
+    "contract_title": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement",
+    "contract_filename": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement.pdf",
+    "category": "Hosting",
+    "clause_type": "Governing Law",
+    "question": "In the VitalibisInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "governed",
+      "State",
+      "California",
+      "giving"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall be governed by the laws of the State of California without giving effect to conflict or choice of law principles."
+  },
+  {
+    "id": "cuad_02",
+    "contract_title": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement",
+    "contract_filename": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement.pdf",
+    "category": "IP",
+    "clause_type": "Governing Law",
+    "question": "In the RareElementResourcesLtd contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "New York",
+      "United States",
+      "construed",
+      "accordance"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This IP Agreement will be construed in accordance with the substantive laws of the state of New York and of the United States of America."
+  },
+  {
+    "id": "cuad_03",
+    "contract_title": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement",
+    "contract_filename": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement.pdf",
+    "category": "Franchise",
+    "clause_type": "Governing Law",
+    "question": "In the SimplicityEsportsGamingCompany contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "New York",
+      "expressly",
+      "agreed",
+      "governed"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "The parties hereto have expressly agreed that this Agreement shall be governed by, and construed in accordance with, the laws of the State of New York, applicable to contracts executed and fully to be performed therein, to the exclusion of any other applicable body of governing law."
+  },
+  {
+    "id": "cuad_04",
+    "contract_title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+    "contract_filename": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement.pdf",
+    "category": "Development",
+    "clause_type": "Governing Law",
+    "question": "In the HfEnterprisesInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "New York",
+      "governed",
+      "accordance",
+      "State"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall be governed in accordance with the laws of the State of New York without regard to conflict of laws principles."
+  },
+  {
+    "id": "cuad_05",
+    "contract_title": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1",
+    "contract_filename": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1.pdf",
+    "category": "License_Agreements",
+    "clause_type": "Governing Law",
+    "question": "In the PlayboyEnterprisesInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "governed",
+      "construed",
+      "accordance",
+      "Illinois"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall be governed by and construed in accordance with the laws of the Illinois without giving effect to its conflict of laws principles."
+  },
+  {
+    "id": "cuad_06",
+    "contract_title": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement",
+    "contract_filename": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement.pdf",
+    "category": "Supply",
+    "clause_type": "Governing Law",
+    "question": "In the WestPharmaceuticalServicesInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "ExxonMobil Selling Affiliate",
+      "2010",
+      "Buyer",
+      "governed"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement between EM and Buyer shall be governed by the laws of Belgium (excluding its rules on conflict of laws)."
+  },
+  {
+    "id": "cuad_07",
+    "contract_title": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1",
+    "contract_filename": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1.pdf",
+    "category": "Maintenance",
+    "clause_type": "Governing Law",
+    "question": "In the CardlyticsInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "North Carolina",
+      "governed",
+      "internal",
+      "regarding"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall be governed by the internal laws, and not by the laws regarding conflicts of laws, of the State of North Carolina."
+  },
+  {
+    "id": "cuad_08",
+    "contract_title": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement",
+    "contract_filename": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement.pdf",
+    "category": "Outsourcing",
+    "clause_type": "Governing Law",
+    "question": "In the ParatekPharmaceuticalsInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "governed",
+      "construed",
+      "accordance",
+      "substantive"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall be governed by and construed in accordance with the substantive Laws of the [* * *], excluding any rules of conflicts of laws that would apply the substantive laws of any other jurisdiction."
+  },
+  {
+    "id": "cuad_09",
+    "contract_title": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement",
+    "contract_filename": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement.pdf",
+    "category": "Marketing",
+    "clause_type": "Governing Law",
+    "question": "In the AudibleInc contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "interpreted",
+      "construed",
+      "enforced",
+      "accordance"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement will be interpreted, construed and enforced in accordance with the Laws of the State of Washington, without reference to its choice of Laws rules."
+  },
+  {
+    "id": "cuad_10",
+    "contract_title": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+    "contract_filename": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement.pdf",
+    "category": "Service",
+    "clause_type": "Governing Law",
+    "question": "In the IntegrityFunds contract (Governing Law), which state/country's law governs the interpretation of the contract?",
+    "expected_keywords": [
+      "construed",
+      "accordance",
+      "State",
+      "Kansas"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall be construed in accordance with the laws of the State of Kansas."
+  },
+  {
+    "id": "cuad_11",
+    "contract_title": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement",
+    "contract_filename": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement.pdf",
+    "category": "Hosting",
+    "clause_type": "Parties",
+    "question": "In the VitalibisInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "VITALIBIS INC",
+      "VOTOCAST",
+      "Licensee",
+      "VITALIBIS"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "VOTOCAST, Inc."
+  },
+  {
+    "id": "cuad_12",
+    "contract_title": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement",
+    "contract_filename": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement.pdf",
+    "category": "IP",
+    "clause_type": "Parties",
+    "question": "In the RareElementResourcesLtd contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Rare Element Resources Ltd",
+      "Element",
+      "Resources",
+      "Investor"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Rare Element Resources Ltd."
+  },
+  {
+    "id": "cuad_13",
+    "contract_title": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement",
+    "contract_filename": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement.pdf",
+    "category": "Franchise",
+    "clause_type": "Parties",
+    "question": "In the SimplicityEsportsGamingCompany contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Smaaash Entertainment Private Limited",
+      "Capital",
+      "Acquisition",
+      "Franchisor"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "I-AM Capital Acquisition Company"
+  },
+  {
+    "id": "cuad_14",
+    "contract_title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+    "contract_filename": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement.pdf",
+    "category": "Development",
+    "clause_type": "Parties",
+    "question": "In the HfEnterprisesInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Developer",
+      "HotApp",
+      "International",
+      "Document"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Developer"
+  },
+  {
+    "id": "cuad_15",
+    "contract_title": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1",
+    "contract_filename": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1.pdf",
+    "category": "License_Agreements",
+    "clause_type": "Parties",
+    "question": "In the PlayboyEnterprisesInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Playboy",
+      "Client",
+      "include",
+      "affiliates"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Playboy.com, Inc."
+  },
+  {
+    "id": "cuad_16",
+    "contract_title": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement",
+    "contract_filename": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement.pdf",
+    "category": "Supply",
+    "clause_type": "Parties",
+    "question": "In the WestPharmaceuticalServicesInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "West Pharmaceutical Services",
+      "ExxonMobil Selling Affiliate",
+      "ExxonMobil Selling Affiliates",
+      "Buyer Affiliate"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "West Pharmaceutical Services, Inc."
+  },
+  {
+    "id": "cuad_17",
+    "contract_title": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1",
+    "contract_filename": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1.pdf",
+    "category": "Maintenance",
+    "clause_type": "Parties",
+    "question": "In the CardlyticsInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "America",
+      "Supplier",
+      "Cardlytics"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Bank of America, N.A."
+  },
+  {
+    "id": "cuad_18",
+    "contract_title": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement",
+    "contract_filename": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement.pdf",
+    "category": "Outsourcing",
+    "clause_type": "Parties",
+    "question": "In the ParatekPharmaceuticalsInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Paratek Pharmaceuticals",
+      "Paratek",
+      "Pharmaceuticals",
+      "Customer"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Paratek Pharmaceuticals, Inc."
+  },
+  {
+    "id": "cuad_19",
+    "contract_title": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement",
+    "contract_filename": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement.pdf",
+    "category": "Marketing",
+    "clause_type": "Parties",
+    "question": "In the AudibleInc contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Audible Inc",
+      "Commerce Services",
+      "Audible",
+      "Amazon"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Audible Inc."
+  },
+  {
+    "id": "cuad_20",
+    "contract_title": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+    "contract_filename": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement.pdf",
+    "category": "Service",
+    "clause_type": "Parties",
+    "question": "In the IntegrityFunds contract (Parties), the two or more parties who signed the contract?",
+    "expected_keywords": [
+      "Integrity Short Term Government",
+      "Integrity",
+      "Short",
+      "Government"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Integrity Short Term Government Fund"
+  },
+  {
+    "id": "cuad_21",
+    "contract_title": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement",
+    "contract_filename": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement.pdf",
+    "category": "Hosting",
+    "clause_type": "Agreement Date",
+    "question": "In the VitalibisInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "14",
+      "18"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "3-14-18"
+  },
+  {
+    "id": "cuad_22",
+    "contract_title": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement",
+    "contract_filename": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement.pdf",
+    "category": "IP",
+    "clause_type": "Agreement Date",
+    "question": "In the RareElementResourcesLtd contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "2017",
+      "October"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "October 2, 2017"
+  },
+  {
+    "id": "cuad_23",
+    "contract_title": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement",
+    "contract_filename": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement.pdf",
+    "category": "Franchise",
+    "clause_type": "Agreement Date",
+    "question": "In the SimplicityEsportsGamingCompany contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "2018",
+      "November"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "20t h day of November, 2018"
+  },
+  {
+    "id": "cuad_24",
+    "contract_title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+    "contract_filename": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement.pdf",
+    "category": "Development",
+    "clause_type": "Agreement Date",
+    "question": "In the HfEnterprisesInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "2018",
+      "March"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "1s t day of March, 2018"
+  },
+  {
+    "id": "cuad_25",
+    "contract_title": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1",
+    "contract_filename": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1.pdf",
+    "category": "License_Agreements",
+    "clause_type": "Agreement Date",
+    "question": "In the PlayboyEnterprisesInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "15",
+      "2008",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "January 15, 2008"
+  },
+  {
+    "id": "cuad_26",
+    "contract_title": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement",
+    "contract_filename": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement.pdf",
+    "category": "Supply",
+    "clause_type": "Agreement Date",
+    "question": "In the WestPharmaceuticalServicesInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "10",
+      "2020",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "January 10, 2020"
+  },
+  {
+    "id": "cuad_27",
+    "contract_title": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1",
+    "contract_filename": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1.pdf",
+    "category": "Maintenance",
+    "clause_type": "Agreement Date",
+    "question": "In the CardlyticsInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "11",
+      "10"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "11/4/10"
+  },
+  {
+    "id": "cuad_28",
+    "contract_title": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement",
+    "contract_filename": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement.pdf",
+    "category": "Outsourcing",
+    "clause_type": "Agreement Date",
+    "question": "In the ParatekPharmaceuticalsInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "30",
+      "2016",
+      "December"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "December 30, 2016"
+  },
+  {
+    "id": "cuad_29",
+    "contract_title": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement",
+    "contract_filename": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement.pdf",
+    "category": "Marketing",
+    "clause_type": "Agreement Date",
+    "question": "In the AudibleInc contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "30",
+      "2000",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "January 30, 2000"
+  },
+  {
+    "id": "cuad_30",
+    "contract_title": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+    "contract_filename": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement.pdf",
+    "category": "Service",
+    "clause_type": "Agreement Date",
+    "question": "In the IntegrityFunds contract (Agreement Date), the date of the contract?",
+    "expected_keywords": [
+      "18",
+      "2020",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "January 18, 2020"
+  },
+  {
+    "id": "cuad_31",
+    "contract_title": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement",
+    "contract_filename": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement.pdf",
+    "category": "Hosting",
+    "clause_type": "Effective Date",
+    "question": "In the VitalibisInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "The Effective Date",
+      "Effective",
+      "later",
+      "dates"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "The Effective Date of this Agreement shall be the later of the dates shown by the signatures below."
+  },
+  {
+    "id": "cuad_32",
+    "contract_title": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement",
+    "contract_filename": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement.pdf",
+    "category": "IP",
+    "clause_type": "Effective Date",
+    "question": "In the RareElementResourcesLtd contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "Effective Date",
+      "Closing Date",
+      "Investment Agreement",
+      "Effective"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "\"Effective Date\" has the meaning of the \"Closing Date\" set forth in the Investment Agreement."
+  },
+  {
+    "id": "cuad_33",
+    "contract_title": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement",
+    "contract_filename": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement.pdf",
+    "category": "Franchise",
+    "clause_type": "Effective Date",
+    "question": "In the SimplicityEsportsGamingCompany contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "2018",
+      "November"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "20t h day of November, 2018"
+  },
+  {
+    "id": "cuad_34",
+    "contract_title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+    "contract_filename": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement.pdf",
+    "category": "Development",
+    "clause_type": "Effective Date",
+    "question": "In the HfEnterprisesInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "2018",
+      "March"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "1s t day of March, 2018"
+  },
+  {
+    "id": "cuad_35",
+    "contract_title": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1",
+    "contract_filename": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1.pdf",
+    "category": "License_Agreements",
+    "clause_type": "Effective Date",
+    "question": "In the PlayboyEnterprisesInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "15",
+      "2008",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "January 15, 2008"
+  },
+  {
+    "id": "cuad_36",
+    "contract_title": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement",
+    "contract_filename": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement.pdf",
+    "category": "Supply",
+    "clause_type": "Effective Date",
+    "question": "In the WestPharmaceuticalServicesInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "Effective Date",
+      "2019",
+      "Effective",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Effective Date: January 1, 2019"
+  },
+  {
+    "id": "cuad_37",
+    "contract_title": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1",
+    "contract_filename": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1.pdf",
+    "category": "Maintenance",
+    "clause_type": "Effective Date",
+    "question": "In the CardlyticsInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "11",
+      "10"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "11/4/10"
+  },
+  {
+    "id": "cuad_38",
+    "contract_title": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement",
+    "contract_filename": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement.pdf",
+    "category": "Outsourcing",
+    "clause_type": "Effective Date",
+    "question": "In the ParatekPharmaceuticalsInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "30",
+      "2016",
+      "December"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "December 30, 2016"
+  },
+  {
+    "id": "cuad_39",
+    "contract_title": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement",
+    "contract_filename": "AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement.pdf",
+    "category": "Marketing",
+    "clause_type": "Effective Date",
+    "question": "In the AudibleInc contract (Effective Date), the date when the contract is effective?",
+    "expected_keywords": [
+      "30",
+      "2000",
+      "January"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "January 30, 2000"
+  },
+  {
+    "id": "cuad_40",
+    "contract_title": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+    "contract_filename": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement.pdf",
+    "category": "Service",
+    "clause_type": "Expiration Date",
+    "question": "In the IntegrityFunds contract (Expiration Date), on what date will the contract's initial term expire?",
+    "expected_keywords": [
+      "Qualified Trustees",
+      "18",
+      "2022",
+      "1940"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall continue until January 18, 2022, and thereafter shall continue automatically for successive annual periods ending on January 18th of each year, provided such continuance is specifically approved at least annually by (a) the Fund's Board of Trustees and (b) a vote of a majority (as defined in the 1940 Act) of the Fund's Trustees who are not interested persons (as defined in the"
+  },
+  {
+    "id": "cuad_41",
+    "contract_title": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement",
+    "contract_filename": "VitalibisInc_20180316_8-K_EX-10.2_11100168_EX-10.2_Hosting Agreement.pdf",
+    "category": "Hosting",
+    "clause_type": "Expiration Date",
+    "question": "In the VitalibisInc contract (Expiration Date), on what date will the contract's initial term expire?",
+    "expected_keywords": [
+      "Effective Date",
+      "Initial Term",
+      "1.3",
+      "10.1"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "This Agreement shall commence as of the Effective Date and shall continue in effect for one (I) year, unless earlier terminated as expressly provided in Sections 1.3. 10.1. or 10.2 of this Agreement (the *Initial Term\")"
+  },
+  {
+    "id": "cuad_42",
+    "contract_title": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement",
+    "contract_filename": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement.pdf",
+    "category": "IP",
+    "clause_type": "Expiration Date",
+    "question": "In the RareElementResourcesLtd contract (Expiration Date), on what date will the contract's initial term expire?",
+    "expected_keywords": [
+      "Article XVI",
+      "Effective Date",
+      "United States",
+      "earlier"
+    ],
+    "expected_chunk_ids": [],
+    "is_impossible": false,
+    "reference_answer": "Unless earlier terminated in accordance with the terms of this Article XVI, this IP Agreement and the licenses granted herein will continue in effect from the Effective Date until the expiration of the last to expire of the Patents and any additional period of time thereafter that any of the Patents remain enforceable such as in the United States where a party can sue for infringement after a pate"
+  },
+  {
+    "id": "cuad_43",
+    "contract_title": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement",
+    "contract_filename": "SimplicityEsportsGamingCompany_20181130_8-K_EX-10.1_11444071_EX-10.1_Franchise Agreement.pdf",
+    "category": "Franchise",
+    "clause_type": "Price Restrictions",
+    "question": "In the SimplicityEsportsGamingCompany contract (Price Restrictions), is there a restriction on the  ability of a party to raise or reduce prices of technology, goods, or  services provided?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_44",
+    "contract_title": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement",
+    "contract_filename": "HfEnterprisesInc_20191223_S-1_EX-10.22_11931299_EX-10.22_Development Agreement.pdf",
+    "category": "Development",
+    "clause_type": "Audit Rights",
+    "question": "In the HfEnterprisesInc contract (Audit Rights), does a party have the right to  audit the books, records, or physical locations of the counterparty to ensure compliance with the contract?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_45",
+    "contract_title": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1",
+    "contract_filename": "PlayboyEnterprisesInc_20090220_10-QA_EX-10.2_4091580_EX-10.2_Content License Agreement_ Marketing Agreement_ Sales-Purchase Agreement1.pdf",
+    "category": "License_Agreements",
+    "clause_type": "Notice Period To Terminate Renewal",
+    "question": "In the PlayboyEnterprisesInc contract (Notice Period To Terminate Renewal), what is the notice period required to terminate renewal?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_46",
+    "contract_title": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1",
+    "contract_filename": "CardlyticsInc_20180112_S-1_EX-10.16_11002987_EX-10.16_Maintenance Agreement1.pdf",
+    "category": "Maintenance",
+    "clause_type": "Rofr/Rofo/Rofn",
+    "question": "In the CardlyticsInc contract (Rofr/Rofo/Rofn), is there a clause granting one party a right of first refusal, right of first offer or right of first negotiation to purchase, license, market, or distribute equity interest, technology, assets, products or services?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_47",
+    "contract_title": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement",
+    "contract_filename": "ParatekPharmaceuticalsInc_20170505_10-KA_EX-10.29_10323872_EX-10.29_Outsourcing Agreement.pdf",
+    "category": "Outsourcing",
+    "clause_type": "Rofr/Rofo/Rofn",
+    "question": "In the ParatekPharmaceuticalsInc contract (Rofr/Rofo/Rofn), is there a clause granting one party a right of first refusal, right of first offer or right of first negotiation to purchase, license, market, or distribute equity interest, technology, assets, products or services?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_48",
+    "contract_title": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement",
+    "contract_filename": "WestPharmaceuticalServicesInc_20200116_8-K_EX-10.1_11947529_EX-10.1_Supply Agreement.pdf",
+    "category": "Supply",
+    "clause_type": "Joint Ip Ownership",
+    "question": "In the WestPharmaceuticalServicesInc contract (Joint Ip Ownership), is there any clause providing for joint or shared ownership of intellectual property between the parties to the contract?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_49",
+    "contract_title": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement",
+    "contract_filename": "IntegrityFunds_20200121_485BPOS_EX-99.E UNDR CONTR_11948727_EX-99.E UNDR CONTR_Service Agreement.pdf",
+    "category": "Service",
+    "clause_type": "Post-Termination Services",
+    "question": "In the IntegrityFunds contract (Post-Termination Services), is a party subject to obligations after the termination or expiration of a contract, including any post-termination transition, payment, transfer of IP, wind-down, last-buy, or similar commitments?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  },
+  {
+    "id": "cuad_50",
+    "contract_title": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement",
+    "contract_filename": "RareElementResourcesLtd_20171019_SC 13D_EX-99.4_10897534_EX-99.4_Intellectual Property Agreement.pdf",
+    "category": "IP",
+    "clause_type": "Revenue/Profit Sharing",
+    "question": "In the RareElementResourcesLtd contract (Revenue/Profit Sharing), is one party required to share revenue or profit with the counterparty for any technology, goods, or services?",
+    "expected_keywords": [],
+    "expected_chunk_ids": [],
+    "is_impossible": true,
+    "reference_answer": ""
+  }
+]

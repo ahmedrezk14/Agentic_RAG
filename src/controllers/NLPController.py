@@ -1,18 +1,18 @@
-from openai import project
-
 from .BaseController import BaseController
+from .retrieval_fusion import reciprocal_rank_fusion
 from models.db_schemes import Project,DataChunk
 from stores.llm.LLMEnums import DocumentTypeEnum
-from typing import List
+from typing import List, Literal
 import json
 
 class NLPController(BaseController):
-    def __init__(self, vectordb_client, generation_client, embedding_client, template_parser):
+    def __init__(self, vectordb_client, generation_client, embedding_client, template_parser, reranker_client=None):
         super().__init__()
         self.vectordb_client=vectordb_client
         self.generation_client=generation_client
         self.embedding_client=embedding_client
         self.template_parser=template_parser
+        self.reranker_client=reranker_client
 
     def create_collection_name(self, project_id:str):
         return f"collection_{project_id}_{self.vectordb_client.default_vector_size}".strip()
@@ -58,10 +58,34 @@ class NLPController(BaseController):
 
         return True
 
-    async def search_vector_db_collections(self, project:Project, text:str, limit:int=10):
+    async def search_vector_db_collections(
+        self,
+        project:Project,
+        text:str,
+        limit:int=10,
+        search_mode:Literal["dense", "sparse", "hybrid"]="hybrid",
+        use_reranker:bool=False,
+        rerank_top_n:int=20,
+    ):
         
         # 1-> get collection name 
         collection_name=self.create_collection_name(project_id=project.project_id)
+        should_rerank = use_reranker and self.reranker_client is not None
+        retrieval_limit = max(rerank_top_n, limit) if should_rerank else limit
+
+        if search_mode == "sparse":
+            results = await self.vectordb_client.sparse_search(
+                collection_name=collection_name,
+                text=text,
+                limit=retrieval_limit,
+            )
+            if not results:
+                return False
+            if should_rerank:
+                return self.reranker_client.rerank(query=text, documents=results, top_k=limit)
+            return results
+
+        candidate_limit = max(retrieval_limit * 4, 20) if search_mode == "hybrid" else retrieval_limit
 
         # 2-> text to embedding 
         query_vector=None
@@ -75,13 +99,39 @@ class NLPController(BaseController):
         if query_vector is None :
             return False
 
-        # 3-> dp semantic search 
-        results = await self.vectordb_client.search_by_vector(collection_name=collection_name,vector=query_vector,limit=limit)
+        # 3-> semantic search 
+        dense_results = await self.vectordb_client.search_by_vector(
+            collection_name=collection_name,
+            vector=query_vector,
+            limit=candidate_limit,
+        )
 
-        if not results:
+        if search_mode == "dense":
+            if not dense_results:
+                return False
+            if should_rerank:
+                return self.reranker_client.rerank(query=text, documents=dense_results, top_k=limit)
+            return dense_results
+
+        # 4-> hybrid search: combine dense and sparse candidates via RRF
+        sparse_results = await self.vectordb_client.sparse_search(
+            collection_name=collection_name,
+            text=text,
+            limit=candidate_limit,
+        )
+        fused_results = reciprocal_rank_fusion(
+            dense_results=dense_results or [],
+            sparse_results=sparse_results or [],
+            k=60,
+            limit=retrieval_limit,
+        )
+        if not fused_results:
             return False
-        
-        return results
+
+        if should_rerank:
+            return self.reranker_client.rerank(query=text, documents=fused_results, top_k=limit)
+
+        return fused_results
 
     async def answer_rag_question(self, project:Project, query:str, limit:int=10):
         

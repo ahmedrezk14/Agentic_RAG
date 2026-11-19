@@ -4,6 +4,7 @@ class LLMEnums(Enum):
 
     OPENAI="OPENAI"
     COHERE="COHERE"
+    LOCAL="LOCAL"
 
 class OpenAIEnums(Enum):
     SYSTEM = "system"

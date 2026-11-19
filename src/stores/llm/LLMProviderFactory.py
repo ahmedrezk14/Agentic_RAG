@@ -1,5 +1,5 @@
 from .LLMEnums import LLMEnums
-from .Providers import OpenAIProvider,CoHereProvider
+from .Providers import OpenAIProvider,CoHereProvider,LocalEmbeddingProvider
 
 class LLMProviderFactory:
 
@@ -22,6 +22,12 @@ class LLMProviderFactory:
                 default_input_max_characters=self.config.INPUT_DAFAULT_MAX_CHARACTERS,
                 default_generation_max_output_tokens=self.config.GENERATION_DAFAULT_MAX_TOKENS,
                 default_generation_temperature=self.config.GENERATION_DAFAULT_TEMPERATURE
+            )
+
+        if provider==LLMEnums.LOCAL.value:
+            return LocalEmbeddingProvider(
+                default_input_max_characters=self.config.INPUT_DAFAULT_MAX_CHARACTERS or 1000,
+                device="cpu",
             )
 
         return None

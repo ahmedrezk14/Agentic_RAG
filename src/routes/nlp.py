@@ -139,7 +139,8 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         vectordb_client=request.app.vector_db_clinet,
         embedding_client=request.app.embedding_client,
         generation_client=request.app.generation_client,
-        template_parser=request.app.template_parser
+        template_parser=request.app.template_parser,
+        reranker_client=getattr(request.app, "reranker_client", None),
 
     )
 
@@ -147,6 +148,9 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         project=project, 
         text=search_request.text, 
         limit=search_request.limit,
+        search_mode=search_request.search_mode,
+        use_reranker=search_request.use_reranker,
+        rerank_top_n=search_request.rerank_top_n,
     )
 
     if not results:
