@@ -38,8 +38,8 @@ async def index_project(request:Request, project_id:int, push_request:PushReques
         vectordb_client=request.app.vector_db_clinet,
         embedding_client=request.app.embedding_client,
         generation_client=request.app.generation_client,
-        template_parser=request.app.template_parser
-
+        template_parser=request.app.template_parser,
+        reranker_client=request.app.reranker_client
     )
 
     has_records=True
@@ -112,7 +112,8 @@ async def get_project_index_info(request:Request, project_id:int):
         vectordb_client=request.app.vector_db_clinet,
         embedding_client=request.app.embedding_client,
         generation_client=request.app.generation_client,
-        template_parser=request.app.template_parser
+        template_parser=request.app.template_parser,
+        reranker_client=request.app.reranker_client
 
     )
 
@@ -139,7 +140,8 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         vectordb_client=request.app.vector_db_clinet,
         embedding_client=request.app.embedding_client,
         generation_client=request.app.generation_client,
-        template_parser=request.app.template_parser
+        template_parser=request.app.template_parser,
+        reranker_client=request.app.reranker_client
 
     )
 
@@ -147,6 +149,10 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         project=project, 
         text=search_request.text, 
         limit=search_request.limit,
+        search_mode=search_request.search_mode,
+        use_reranker=search_request.use_reranker,
+        rerank_top_k=search_request.rerank_top_k,
+        rerank_score_threshold=search_request.rerank_score_threshold,
     )
 
     if not results:
@@ -176,13 +182,19 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         vectordb_client=request.app.vector_db_clinet,
         embedding_client=request.app.embedding_client,
         generation_client=request.app.generation_client,
-        template_parser=request.app.template_parser
+        template_parser=request.app.template_parser,
+        reranker_client=request.app.reranker_client
+
     )
 
     answer, full_prompt, chat_history = await nlp_controller.answer_rag_question(
         project=project,
         query=search_request.text,
-        limit=search_request.limit
+        limit=search_request.limit,
+        search_mode=search_request.search_mode,
+        use_reranker=search_request.use_reranker,
+        rerank_top_k=search_request.rerank_top_k,
+        rerank_score_threshold=search_request.rerank_score_threshold,
     )
 
     if not answer:

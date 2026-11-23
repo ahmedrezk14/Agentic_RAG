@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, DateTime, func, String, ForeignKey, Inde
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
 import uuid
+from typing import Optional
 
 from pydantic import BaseModel 
 
@@ -34,3 +35,4 @@ class DataChunk(SQLAlchemyBase):
 class RetrievedDocument(BaseModel):
     text:str
     score:float
+    chunk_id:Optional[int]=None

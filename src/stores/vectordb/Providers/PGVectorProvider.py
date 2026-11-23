@@ -1,5 +1,3 @@
-from unittest import result
-
 from ..VectorDBInterface import VectorDBInterface
 from ..VectorDBEnums import (PgVectorDistanceMethodEnums, 
                             PgVectorIndexTypeEnums,
@@ -29,6 +27,7 @@ class PGVectorProvider(VectorDBInterface):
 
         self.logger=logging.getLogger("uvicorn")
         self.default_index_name=lambda collection_name: f"{collection_name}_vector_idx"
+        self.default_tsv_index_name=lambda collection_name: f"{collection_name}_tsv_idx"
 
     async def connect(self):
         async with self.db_client() as session :
@@ -111,11 +110,22 @@ class PGVectorProvider(VectorDBInterface):
                                         f'{PgVectorTableSchemeEnums.TEXT.value} text, ' 
                                         f'{PgVectorTableSchemeEnums.VECTOR.value} vector({embedding_size}), ' 
                                         f'{PgVectorTableSchemeEnums.METADATA.value} jsonb DEFAULT \'{{}}\', ' 
-                                        f'{PgVectorTableSchemeEnums.CHUNK_ID.value} integer, ' 
+                                        f'{PgVectorTableSchemeEnums.CHUNK_ID.value} integer NOT NULL, '
+                                        f"{PgVectorTableSchemeEnums.TEXT_TSV.value} tsvector "
+                                        f"GENERATED ALWAYS AS ("
+                                        f"to_tsvector('english', coalesce({PgVectorTableSchemeEnums.TEXT.value}, '')) || "
+                                        f"to_tsvector('arabic', coalesce({PgVectorTableSchemeEnums.TEXT.value}, ''))"
+                                        f") STORED, "
                                         f'FOREIGN KEY ({PgVectorTableSchemeEnums.CHUNK_ID.value}) REFERENCES chunks(chunk_id) ' 
                                         ')'
                                 )
                     await session.execute(create_sql)
+                    tsv_idx_name = self.default_tsv_index_name(collection_name=collection_name)
+                    create_tsv_idx_sql = sql_text(
+                        f'CREATE INDEX IF NOT EXISTS {tsv_idx_name} '
+                        f'ON {collection_name} USING GIN ({PgVectorTableSchemeEnums.TEXT_TSV.value})'
+                    )
+                    await session.execute(create_tsv_idx_sql)
                     await session.commit()    
             return True
         return False
@@ -251,13 +261,14 @@ class PGVectorProvider(VectorDBInterface):
         
         is_collection_exited=await self.is_collection_exited(collection_name=collection_name)
         if not is_collection_exited:
-            self.logger.error(f"Can not insert new records to non-existed collection: {collection_name}")
-            return False
+            self.logger.error(f"Can not search in non-existed collection: {collection_name}")
+            return []
         
         vector = '[' + ','.join([str(v) for v in vector]) + ']'
         async with self.db_client() as session :
             async with session.begin():
                 search_sql = sql_text(f'SELECT {PgVectorTableSchemeEnums.TEXT.value} as text, '
+                                      f'{PgVectorTableSchemeEnums.CHUNK_ID.value} as chunk_id, '
                                       f' 1 - ({PgVectorTableSchemeEnums.VECTOR.value} <=> :vector) as score '
                                       f' FROM {collection_name} ORDER BY score DESC LIMIT {limit}'
                                       )
@@ -267,9 +278,77 @@ class PGVectorProvider(VectorDBInterface):
                 return [
                     RetrievedDocument(
                         text = record.text,
-                        score = record.score
+                        score = float(record.score),
+                        chunk_id=record.chunk_id
                     )
                     for record in records
                 ]
         
-        
+    async def get_vectors_by_chunk_ids(
+        self, collection_name: str, chunk_ids: List[int]
+    ) -> dict[int, List[float]]:
+        """Fetch stored pgvector embeddings for a list of chunk_ids."""
+        if not chunk_ids:
+            return {}
+        chunk_id_col = PgVectorTableSchemeEnums.CHUNK_ID.value
+        vector_col = PgVectorTableSchemeEnums.VECTOR.value
+        async with self.db_client() as session:
+            async with session.begin():
+                sql = sql_text(
+                    f"SELECT {chunk_id_col} AS chunk_id, {vector_col}::text AS vec "
+                    f"FROM {collection_name} "
+                    f"WHERE {chunk_id_col} = ANY(:chunk_ids)"
+                )
+                result = await session.execute(sql, {"chunk_ids": list(chunk_ids)})
+                rows = result.fetchall()
+        vectors: dict[int, List[float]] = {}
+        for row in rows:
+            raw = row.vec.strip("[]")
+            if raw:
+                vectors[int(row.chunk_id)] = [float(x) for x in raw.split(",")]
+        return vectors
+
+    async def sparse_search(self, collection_name:str, text:str, limit:int) -> List[RetrievedDocument]:
+        """Search collection using PostgreSQL full-text search (tsvector + ts_rank_cd)."""
+        is_collection_exited = await self.is_collection_exited(collection_name=collection_name)
+        if not is_collection_exited:
+            self.logger.error(f"Cannot search non-existed collection: {collection_name}")
+            return []
+
+        tsv_col = PgVectorTableSchemeEnums.TEXT_TSV.value
+        text_col = PgVectorTableSchemeEnums.TEXT.value
+        chunk_id_col = PgVectorTableSchemeEnums.CHUNK_ID.value
+
+        async with self.db_client() as session:
+            async with session.begin():
+                search_sql = sql_text(
+                                    f"WITH q AS ("
+                                    f"  SELECT NULLIF("
+                                    f"    replace("
+                                    f"      (websearch_to_tsquery('english', :query) || plainto_tsquery('arabic', :query))::text,"
+                                    f"      ' & ', ' | '"
+                                    f"    ), ''"
+                                    f"  )::tsquery AS tsq"
+                                    f") "
+                                    f"SELECT c.{text_col} AS text, "
+                                    f"       c.{chunk_id_col} AS chunk_id, "
+                                    f"       ts_rank_cd(c.{tsv_col}, q.tsq, 1 | 32) AS score "
+                                    f"FROM {collection_name} c, q "
+                                    f"WHERE q.tsq IS NOT NULL AND c.{tsv_col} @@ q.tsq "
+                                    f"ORDER BY score DESC "
+                                    f"LIMIT :limit"
+                                )
+                result = await session.execute(search_sql, {"query": text, "limit": limit})
+                records = result.fetchall()
+
+                return [
+                    RetrievedDocument(
+                        text=record.text,
+                        score=float(record.score),
+                        chunk_id=record.chunk_id,
+                    )
+                    for record in records
+                ]
+
+
+    

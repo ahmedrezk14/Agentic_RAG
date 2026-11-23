@@ -45,3 +45,7 @@ class VectorDBInterface(ABC):
     def search_by_vector(self, collection_name:str, vector:list, limit:int) -> List[RetrievedDocument]:
         pass
 
+    #@abstractmethod
+    async def sparse_search(self, collection_name:str, text:str, limit:int) -> List[RetrievedDocument]:
+        return []
+    

@@ -6,6 +6,7 @@ from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
 from stores.llm.templates.template_parser import TemplateParser
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
+from stores.reranker import CrossEncoderReranker
 
 app=FastAPI()
 
@@ -37,7 +38,8 @@ async def startup_span():
     await app.vector_db_clinet.connect()
 
     app.template_parser=TemplateParser(language=settings.PRIMARY_LANG,default_language=settings.DEFAULT_LANG)
-
+    
+    app.reranker_client = CrossEncoderReranker(model_id=settings.RERANKING_MODEL_ID)
 
 async def shutdown_span():
     app.db_engine.dispose()

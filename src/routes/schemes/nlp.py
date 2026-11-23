@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional,Literal
 
 class PushRequest(BaseModel):
     do_reset:Optional[int]=0
@@ -7,3 +7,7 @@ class PushRequest(BaseModel):
 class SearchhRequest(BaseModel):
     text:str
     limit:Optional[int]=10
+    search_mode: Literal["dense", "sparse", "hybrid"] = "hybrid"
+    use_reranker: bool = True
+    rerank_top_k: int = 25
+    rerank_score_threshold: Optional[float] = None

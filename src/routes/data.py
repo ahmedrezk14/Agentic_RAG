@@ -90,7 +90,9 @@ async def process_endpint(request:Request,project_id: int, process_request: Proc
         vectordb_client=request.app.vector_db_clinet,
         embedding_client=request.app.embedding_client,
         generation_client=request.app.generation_client,
-        template_parser=request.app.template_parser
+        template_parser=request.app.template_parser,
+        reranker_client=request.app.reranker_client
+
     )
 
     project_model=await ProjectModel.create_instance(db_client=request.app.db_client)
