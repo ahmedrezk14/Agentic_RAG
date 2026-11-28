@@ -1,0 +1,36 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	contextualize_and_route(contextualize_and_route)
+	retrieve_docs(retrieve_docs)
+	judge_relevant(judge_relevant)
+	rewrite_query(rewrite_query)
+	generate_rag_answer(generate_rag_answer)
+	answer_without_docs(answer_without_docs)
+	ask_clarify(ask_clarify)
+	fallback_not_found(fallback_not_found)
+	check_groundedness(check_groundedness)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> contextualize_and_route;
+	check_groundedness -. &nbsp;end&nbsp; .-> __end__;
+	check_groundedness -. &nbsp;fallback&nbsp; .-> fallback_not_found;
+	check_groundedness -. &nbsp;regen&nbsp; .-> generate_rag_answer;
+	contextualize_and_route -. &nbsp;direct&nbsp; .-> answer_without_docs;
+	contextualize_and_route -. &nbsp;clarify&nbsp; .-> ask_clarify;
+	contextualize_and_route -. &nbsp;retrieve&nbsp; .-> retrieve_docs;
+	generate_rag_answer --> check_groundedness;
+	judge_relevant -. &nbsp;fallback&nbsp; .-> fallback_not_found;
+	judge_relevant -. &nbsp;generate&nbsp; .-> generate_rag_answer;
+	judge_relevant -. &nbsp;rewrite&nbsp; .-> rewrite_query;
+	retrieve_docs --> judge_relevant;
+	rewrite_query --> retrieve_docs;
+	answer_without_docs --> __end__;
+	ask_clarify --> __end__;
+	fallback_not_found --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

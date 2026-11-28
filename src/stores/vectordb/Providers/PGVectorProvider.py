@@ -5,7 +5,7 @@ from ..VectorDBEnums import (PgVectorDistanceMethodEnums,
                             DistanceMethodEnums)
 from models.db_schemes import RetrievedDocument
 import logging
-from typing import List
+from typing import List, Any, Dict, Optional
 from sqlalchemy.sql import text as sql_text
 import json
 
@@ -257,7 +257,7 @@ class PGVectorProvider(VectorDBInterface):
 
 
 
-    async def search_by_vector(self, collection_name:str, vector:list, limit:int) -> List[RetrievedDocument]:
+    async def search_by_vector(self, collection_name:str, vector:list, limit:int, metadata_filter:Optional[Dict[str,Any]]=None) -> List[RetrievedDocument]:
         
         is_collection_exited=await self.is_collection_exited(collection_name=collection_name)
         if not is_collection_exited:
@@ -265,14 +265,25 @@ class PGVectorProvider(VectorDBInterface):
             return []
         
         vector = '[' + ','.join([str(v) for v in vector]) + ']'
+        metadata_col=PgVectorTableSchemeEnums.METADATA.value
+        where_clause=""
+        params:Dict[str, Any]={
+            'vector':vector
+        }
+        if metadata_filter:
+            where_clause=f'WHERE {metadata_col} @> CAST(:metadata_filter AS jsonb) '
+            params['metadata_filter']=json.dumps(
+                metadata_filter,ensure_ascii=False
+            )
+        
         async with self.db_client() as session :
             async with session.begin():
                 search_sql = sql_text(f'SELECT {PgVectorTableSchemeEnums.TEXT.value} as text, '
                                       f'{PgVectorTableSchemeEnums.CHUNK_ID.value} as chunk_id, '
                                       f' 1 - ({PgVectorTableSchemeEnums.VECTOR.value} <=> :vector) as score '
-                                      f' FROM {collection_name} ORDER BY score DESC LIMIT {limit}'
+                                      f' FROM {collection_name} {where_clause} ORDER BY score DESC LIMIT {limit}'
                                       )
-                result=await session.execute(search_sql,{'vector':vector})
+                result=await session.execute(search_sql,params)
                 records=result.fetchall()
 
                 return [
@@ -308,7 +319,7 @@ class PGVectorProvider(VectorDBInterface):
                 vectors[int(row.chunk_id)] = [float(x) for x in raw.split(",")]
         return vectors
 
-    async def sparse_search(self, collection_name:str, text:str, limit:int) -> List[RetrievedDocument]:
+    async def sparse_search(self, collection_name:str, text:str, limit:int, metadata_filter:Optional[Dict[str,Any]]=None) -> List[RetrievedDocument]:
         """Search collection using PostgreSQL full-text search (tsvector + ts_rank_cd)."""
         is_collection_exited = await self.is_collection_exited(collection_name=collection_name)
         if not is_collection_exited:
@@ -318,6 +329,15 @@ class PGVectorProvider(VectorDBInterface):
         tsv_col = PgVectorTableSchemeEnums.TEXT_TSV.value
         text_col = PgVectorTableSchemeEnums.TEXT.value
         chunk_id_col = PgVectorTableSchemeEnums.CHUNK_ID.value
+
+        metadata_col=PgVectorTableSchemeEnums.METADATA.value
+        metadata_clause=""
+        params:Dict[str, Any]={'query':text,'limit':limit}
+        if metadata_filter:
+            metadata_clause=f"AND c.{metadata_col} @> CAST(:metadata_filter AS jsonb) "
+            params['metadata_filter']=json.dumps(
+                metadata_filter,ensure_ascii=False
+            )
 
         async with self.db_client() as session:
             async with session.begin():
@@ -335,10 +355,11 @@ class PGVectorProvider(VectorDBInterface):
                                     f"       ts_rank_cd(c.{tsv_col}, q.tsq, 1 | 32) AS score "
                                     f"FROM {collection_name} c, q "
                                     f"WHERE q.tsq IS NOT NULL AND c.{tsv_col} @@ q.tsq "
+                                    F"{metadata_clause}"
                                     f"ORDER BY score DESC "
                                     f"LIMIT :limit"
                                 )
-                result = await session.execute(search_sql, {"query": text, "limit": limit})
+                result = await session.execute(search_sql, params)
                 records = result.fetchall()
 
                 return [

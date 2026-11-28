@@ -1,5 +1,5 @@
 from abc import ABC,abstractmethod
-from typing import List
+from typing import List, Any, Dict, Optional
 from models.db_schemes import RetrievedDocument
 
 class VectorDBInterface(ABC):
@@ -42,10 +42,10 @@ class VectorDBInterface(ABC):
         pass
 
     @abstractmethod
-    def search_by_vector(self, collection_name:str, vector:list, limit:int) -> List[RetrievedDocument]:
+    def search_by_vector(self, collection_name:str, vector:list, limit:int, metadata_filter:Optional[Dict[str,Any]]=None) -> List[RetrievedDocument]:
         pass
 
     #@abstractmethod
-    async def sparse_search(self, collection_name:str, text:str, limit:int) -> List[RetrievedDocument]:
+    async def sparse_search(self, collection_name:str, text:str, limit:int, metadata_filter:Optional[Dict[str,Any]]=None) -> List[RetrievedDocument]:
         return []
     

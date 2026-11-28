@@ -9,8 +9,10 @@ from controllers import NLPController
 import logging
 from tqdm.auto import tqdm 
 
-logger=logging.getLogger('uvicorn.error')
+from langchain_core.messages import HumanMessage
+from .schemes.nlp import AgentRequest
 
+logger=logging.getLogger('uvicorn.error')
 
 
 nlp_router=APIRouter(
@@ -130,6 +132,7 @@ async def get_project_index_info(request:Request, project_id:int):
         }
     )
 
+
 @nlp_router.post("/index/search/{project_id}")
 async def get_project_index_info(request:Request, project_id:int, search_request:SearchhRequest):
 
@@ -153,6 +156,7 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         use_reranker=search_request.use_reranker,
         rerank_top_k=search_request.rerank_top_k,
         rerank_score_threshold=search_request.rerank_score_threshold,
+        metadata_filter=search_request.filters
     )
 
     if not results:
@@ -168,8 +172,6 @@ async def get_project_index_info(request:Request, project_id:int, search_request
             "results":[result.dict() for result in results]
         }
     )
-
-
 
 
 @nlp_router.post("/index/answer/{project_id}")
@@ -195,6 +197,7 @@ async def get_project_index_info(request:Request, project_id:int, search_request
         use_reranker=search_request.use_reranker,
         rerank_top_k=search_request.rerank_top_k,
         rerank_score_threshold=search_request.rerank_score_threshold,
+        metadata_filter=search_request.filters
     )
 
     if not answer:
@@ -213,3 +216,41 @@ async def get_project_index_info(request:Request, project_id:int, search_request
             "chat_history":chat_history
         }
     )
+
+
+@nlp_router.post("/agent/answer/{project_id}")
+async def answer_with_agent(request:Request, project_id:int, agent_request:AgentRequest):
+
+    result= await request.app.rag_agent.ainvoke(
+        {
+            "messages":[HumanMessage(content=agent_request.text)],
+            "project_id":project_id,
+            "filters":agent_request.filters
+        },
+        config={
+            "configurable":{
+                "thread_id":agent_request.thread_id
+            }
+        }
+    )
+
+    answer=result.get("answer")
+
+    if not answer:
+        return JSONResponse(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            content={
+                "signal":ResponseSignal.RAG_ANSWER_ERROR.value
+            }
+        )
+    
+    return JSONResponse(
+        content={
+            "signal":ResponseSignal.RAG_ANSWER_SUCCESS.value,
+            "answer":answer,
+            "route":result.get('route'),
+            "retry_count":result.get('retry_count',0)
+        }
+    )
+
+

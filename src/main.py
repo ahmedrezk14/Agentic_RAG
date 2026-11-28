@@ -8,6 +8,11 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from stores.reranker import CrossEncoderReranker
 
+from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
+from controllers import NLPController
+from agents.RAG_Agent import build_rag_graph
+
+
 app=FastAPI()
 
 async def startup_span():
@@ -41,9 +46,30 @@ async def startup_span():
     
     app.reranker_client = CrossEncoderReranker(model_id=settings.RERANKING_MODEL_ID)
 
+    postgres_agent_conn=f"postgresql://{settings.POSTGRES_USERNAME}:{settings.POSTGRES_PASSWORD}@{settings.POSTGRES_HOST}:{settings.POSTGRES_PORT}/{settings.POSTGRES_MAIN_DATABASE}"
+    app.checkpointer_=AsyncPostgresSaver.from_conn_string(postgres_agent_conn)
+    app.checkpointer=await app.checkpointer_.__aenter__()
+    await app.checkpointer.setup()
+
+    nlp_controller=NLPController(
+        vectordb_client =app.vector_db_clinet,
+        generation_client = app.generation_client,
+        embedding_client = app.embedding_client, 
+        template_parser = app.template_parser, 
+        reranker_client = app.reranker_client
+    )
+
+    app.rag_agent=build_rag_graph(
+        checkpointer = app.checkpointer, 
+        nlp_controller = nlp_controller, 
+        db_client= app.db_client
+    )
+
 async def shutdown_span():
-    app.db_engine.dispose()
-    app.vector_db_clinet.disconnect()
+    await app.db_engine.dispose()
+    await app.vector_db_clinet.disconnect()
+    if hasattr(app,"checkpointer_"):
+        await app.checkpointer_.__aexit__(None ,None ,None )
 
 app.on_event("startup")(startup_span)
 app.on_event("shutdown")(shutdown_span)

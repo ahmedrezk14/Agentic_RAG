@@ -1,0 +1,1067 @@
+{
+  "base_url": "http://127.0.0.1:5000",
+  "project_id": 99,
+  "judge_model": "openai/gpt-oss-120b",
+  "summary": {
+    "total_queries": 55,
+    "http_errors": 0,
+    "overall_answerable_accuracy_pct": 86.36,
+    "answerable_accuracy_pct": 86.21,
+    "hard_hidden_accuracy_pct": 86.67,
+    "unanswerable_refusal_rate_pct": 100.0,
+    "inline_citation_coverage_pct": 88.64,
+    "route_retrieve_accuracy_pct": 100.0,
+    "avg_retry_count": 0.582,
+    "avg_latency_ms": 7137.24,
+    "counts": {
+      "answerable": {
+        "passed": 25,
+        "total": 29
+      },
+      "hard_hidden": {
+        "passed": 13,
+        "total": 15
+      },
+      "unanswerable": {
+        "refused": 11,
+        "total": 11
+      },
+      "inline_citations": {
+        "cited": 39,
+        "eligible": 44
+      },
+      "route_retrieve": {
+        "hits": 55,
+        "total": 55
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "q01",
+      "category": "answerable",
+      "contract": "VitalibisInc",
+      "clause_type": "Payment Terms",
+      "thread_id": "eval-agent-1795867550-q01",
+      "question": "How many days are invoices due under the VitalibisInc agreement and what late payment interest rate applies?",
+      "relevant_doc_indices": [
+        4
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the 30‑day payment term and the 1% per month late interest rate with the legal maximum caveat.",
+      "latency_ms": 5689.48,
+      "answer": "Invoices must be paid within thirty (30) days of the invoice date, and any late payment will accrue interest at a rate of one percent (1%) per month (or the maximum rate permitted by law, whichever is lower)【Chunk 1】."
+    },
+    {
+      "id": "q02",
+      "category": "answerable",
+      "contract": "VitalibisInc",
+      "clause_type": "Confidentiality",
+      "thread_id": "eval-agent-1795867550-q02",
+      "question": "How long do confidentiality obligations survive after termination of the VitalibisInc agreement?",
+      "relevant_doc_indices": [
+        11
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the three-year survival period for confidentiality obligations as in the reference.",
+      "latency_ms": 3895.03,
+      "answer": "The confidentiality obligations survive for three (3) years after the agreement’s expiration or termination. [Chunk 1]"
+    },
+    {
+      "id": "q03",
+      "category": "answerable",
+      "contract": "VitalibisInc",
+      "clause_type": "Notice Period To Terminate Renewal",
+      "thread_id": "eval-agent-1795867550-q03",
+      "question": "How many days prior written notice is required to prevent automatic renewal of the VitalibisInc hosting agreement?",
+      "relevant_doc_indices": [
+        14
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states 180 days, matching the reference.",
+      "latency_ms": 3955.06,
+      "answer": "180 days【Chunk 1】"
+    },
+    {
+      "id": "q04",
+      "category": "answerable",
+      "contract": "VitalibisInc",
+      "clause_type": "Governing Law",
+      "thread_id": "eval-agent-1795867550-q04",
+      "question": "Which state laws govern the VitalibisInc hosting agreement with VOTOCAST?",
+      "relevant_doc_indices": [
+        18
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": false,
+      "judge_reason": "The reference states the agreement is governed by California law, but the assistant said no information was found.",
+      "latency_ms": 12808.67,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q05",
+      "category": "hard_hidden",
+      "contract": "VitalibisInc",
+      "clause_type": "No-Solicit Of Employees",
+      "thread_id": "eval-agent-1795867550-q05",
+      "question": "What liquidated damages penalty applies if one party hires an employee of the other under the VitalibisInc contract?",
+      "relevant_doc_indices": [
+        20
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the liquidated damages as twice the individual's annual salary and bonus, matching the reference.",
+      "latency_ms": 3859.55,
+      "answer": "The contract provides that the hiring party must pay liquidated damages equal to twice the employee’s annual salary and bonus. [Chunk 1]"
+    },
+    {
+      "id": "q06",
+      "category": "hard_hidden",
+      "contract": "VitalibisInc",
+      "clause_type": "Limitation Of Liability",
+      "thread_id": "eval-agent-1795867550-q06",
+      "question": "Can VOTOCAST be held liable for consequential or punitive damages resulting from unauthorized access or data theft?",
+      "relevant_doc_indices": [
+        10
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states VOTOCAST is not liable for consequential or punitive damages related to unauthorized access or data theft, matching the reference.",
+      "latency_ms": 5089.16,
+      "answer": "No. According to the agreement, VOTOCAST is not liable for any consequential, exemplary, special, incidental, or punitive damages arising from unauthorized access, alteration, theft or destruction of data [Chunk 1]."
+    },
+    {
+      "id": "q07",
+      "category": "answerable",
+      "contract": "RareElementResourcesLtd",
+      "clause_type": "Patent Maintenance Notice",
+      "thread_id": "eval-agent-1795867550-q07",
+      "question": "How many days prior written notice must Rare Element Resources give Synchron before abandoning a patent application?",
+      "relevant_doc_indices": [
+        37
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the required sixty‑day prior written notice as per the reference.",
+      "latency_ms": 3571.76,
+      "answer": "Rare Element Resources must give Synchron at least sixty (60) days’ prior written notice before abandoning a patent application. [Chunk 2]"
+    },
+    {
+      "id": "q08",
+      "category": "answerable",
+      "contract": "RareElementResourcesLtd",
+      "clause_type": "Post-Expiration Damages",
+      "thread_id": "eval-agent-1795867550-q08",
+      "question": "For how many years prior to filing an infringement suit can damages be sought after patent expiration in the Rare Element Resources agreement?",
+      "relevant_doc_indices": [
+        49
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states six years, matching the reference excerpt.",
+      "latency_ms": 4954.64,
+      "answer": "Six years [Chunk 1]"
+    },
+    {
+      "id": "q09",
+      "category": "answerable",
+      "contract": "RareElementResourcesLtd",
+      "clause_type": "IP Ownership",
+      "thread_id": "eval-agent-1795867550-q09",
+      "question": "Who owns Joint Improvements developed by Rare Element Resources and Synchron under the IP Rights Agreement?",
+      "relevant_doc_indices": [
+        39
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states that the Investor (Synchron) owns all rights to Joint Improvements, matching the reference.",
+      "latency_ms": 4501.73,
+      "answer": "The Investor – Synchron – owns all right, title and interest in any Joint Improvements developed under the IP Rights Agreement [Chunk 3]."
+    },
+    {
+      "id": "q10",
+      "category": "hard_hidden",
+      "contract": "RareElementResourcesLtd",
+      "clause_type": "License Grant",
+      "thread_id": "eval-agent-1795867550-q10",
+      "question": "How do Investor patent licenses change if the Option is exercised before the Option Period expires in the Rare Element Resources agreement?",
+      "relevant_doc_indices": [
+        32
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": false,
+      "judge_reason": "The answer adds details (fully paid‑up, sublicensing rights, pre‑exercise restrictions) not present in the provided excerpt, fabricating information beyond the stated exclusive, perpetual change.",
+      "latency_ms": 5814.76,
+      "answer": "If the Option is exercised before the Option Period expires, the patent licenses granted in Articles 3.00 and 3.01 become **exclusive to the Investor and continue in perpetuity**【Chunk 2】. At that point the licenses are considered **fully paid‑up** and the Investor gains the **right to grant sublicenses to third parties**【Chunk 3】. Additionally, until the Investor exercises the Option (or the Option Period ends), the Company may **not grant any third‑party rights to the Patents or Technical Information that extend beyond the expiration of the Option Period**【Chunk 3】."
+    },
+    {
+      "id": "q11",
+      "category": "hard_hidden",
+      "contract": "RareElementResourcesLtd",
+      "clause_type": "Dispute Resolution",
+      "thread_id": "eval-agent-1795867550-q11",
+      "question": "Are settlement offers or statements made during mediation admissible in court under the Rare Element Resources IP agreement?",
+      "relevant_doc_indices": [
+        52
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer accurately reflects that mediation statements are confidential, privileged, and inadmissible in court, with the noted exception for otherwise admissible evidence.",
+      "latency_ms": 5815.41,
+      "answer": "No. Under the Rare Element Resources Ltd. IP Rights Agreement, all offers, promises, conduct and statements made during mediation are deemed confidential, privileged and inadmissible in any litigation, arbitration or other proceeding, including court, unless the evidence is otherwise admissible or discoverable [Chunk 1]."
+    },
+    {
+      "id": "q12",
+      "category": "answerable",
+      "contract": "SimplicityEsportsGamingCompany",
+      "clause_type": "Territory",
+      "thread_id": "eval-agent-1795867550-q12",
+      "question": "Which geographic territories are granted to the Franchisee in the Smaaash Master Franchise Agreement?",
+      "relevant_doc_indices": [
+        55
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": false,
+      "judge_reason": "The answer fails to state the territories (North America and South America) provided in the reference excerpt.",
+      "latency_ms": 13075.56,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q13",
+      "category": "answerable",
+      "contract": "SimplicityEsportsGamingCompany",
+      "clause_type": "Minimum Store Commitment",
+      "thread_id": "eval-agent-1795867550-q13",
+      "question": "How many Smaaash Centres must the Franchisee set up in the first Contract Year and what 5% sub-franchise fees apply?",
+      "relevant_doc_indices": [
+        60
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the requirement of at least 6 centres and both 5% sub‑franchise fees as described in the reference.",
+      "latency_ms": 5409.97,
+      "answer": "The Franchisee must set up **at least 6 Smaaash Centres** during the first Contract Year, and is entitled to **two 5 % fees**: (i) 5 % of the agreed capital‑expenditure as a sign‑on/up‑front fee, and (ii) 5 % of the revenue generated by third‑party franchisees from the Smaaash Centres on an annual basis【Chunk 1】."
+    },
+    {
+      "id": "q14",
+      "category": "answerable",
+      "contract": "SimplicityEsportsGamingCompany",
+      "clause_type": "Audit Rights",
+      "thread_id": "eval-agent-1795867550-q14",
+      "question": "How many days written notice must Smaaash provide before auditing Franchisee centres and books of accounts?",
+      "relevant_doc_indices": [
+        75
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the required 5 days written notice as per the reference.",
+      "latency_ms": 4364.19,
+      "answer": "Smaaash must give a written notice of 5 days before it can audit the Franchisee’s centres and books of accounts【Chunk 1】."
+    },
+    {
+      "id": "q15",
+      "category": "answerable",
+      "contract": "SimplicityEsportsGamingCompany",
+      "clause_type": "Governing Law",
+      "thread_id": "eval-agent-1795867550-q15",
+      "question": "Which state laws govern the Smaaash Master Franchise Agreement?",
+      "relevant_doc_indices": [
+        77
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": false,
+      "judge_reason": "The assistant failed to state that the agreement is governed by New York state law, contradicting the reference.",
+      "latency_ms": 12894.49,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q16",
+      "category": "hard_hidden",
+      "contract": "SimplicityEsportsGamingCompany",
+      "clause_type": "Force Majeure",
+      "thread_id": "eval-agent-1795867550-q16",
+      "question": "How long must a Force Majeure delay prevent material performance before either party can end the Smaaash franchise contract?",
+      "relevant_doc_indices": [
+        79
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the 30‑day period required for termination due to Force Majeure, matching the reference.",
+      "latency_ms": 4384.24,
+      "answer": "Either party may terminate the agreement if a Force Majeure event prevents the other from performing any material obligations for a period of thirty (30) days【Chunk 2】."
+    },
+    {
+      "id": "q17",
+      "category": "answerable",
+      "contract": "HfEnterprisesInc",
+      "clause_type": "Development Fees",
+      "thread_id": "eval-agent-1795867550-q17",
+      "question": "What monthly development fee does Document Security Systems pay HotApp International under the Outsource Technology Development Agreement?",
+      "relevant_doc_indices": [
+        84
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the monthly fee of US $23,000 as in the reference.",
+      "latency_ms": 3871.33,
+      "answer": "Document Security Systems pays HotApp International a monthly development fee of US $23,000. [Chunk 2]"
+    },
+    {
+      "id": "q18",
+      "category": "answerable",
+      "contract": "HfEnterprisesInc",
+      "clause_type": "Confidentiality",
+      "thread_id": "eval-agent-1795867550-q18",
+      "question": "For how many years after the Term do the Mutual NDA confidentiality obligations bind DSS and HotApp International?",
+      "relevant_doc_indices": [
+        92
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": false,
+      "judge_reason": "The reference explicitly states the obligations continue for five years after the Term, but the assistant claimed the excerpt did not specify a duration.",
+      "latency_ms": 14585.89,
+      "answer": "The provided excerpts do not specify how many years after the Term the Mutual NDA confidentiality obligations continue to bind DSS and HotApp International."
+    },
+    {
+      "id": "q19",
+      "category": "answerable",
+      "contract": "HfEnterprisesInc",
+      "clause_type": "Governing Law",
+      "thread_id": "eval-agent-1795867550-q19",
+      "question": "Which New York county courts have exclusive jurisdiction and venue under the DSS and HotApp technology development agreement?",
+      "relevant_doc_indices": [
+        104
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly identifies Monroe County as the exclusive jurisdiction and venue per the reference.",
+      "latency_ms": 3767.76,
+      "answer": "The agreement provides that any legal action must be brought in the state or federal courts located in **Monroe County, New York**【Chunk 3】."
+    },
+    {
+      "id": "q20",
+      "category": "hard_hidden",
+      "contract": "HfEnterprisesInc",
+      "clause_type": "Reverse Engineering",
+      "thread_id": "eval-agent-1795867550-q20",
+      "question": "What technical analysis and reverse engineering activities are prohibited for HotApp regarding DSS AuthentiGuard software?",
+      "relevant_doc_indices": [
+        94,
+        95
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": false,
+      "judge_reason": "The assistant gave no answer despite the reference clearly listing prohibited reverse engineering and analysis activities.",
+      "latency_ms": 10779.81,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q21",
+      "category": "hard_hidden",
+      "contract": "HfEnterprisesInc",
+      "clause_type": "Change of Control",
+      "thread_id": "eval-agent-1795867550-q21",
+      "question": "What happens to HotApp rights under the DSS agreement if control or substantially all assets of HotApp are sold without written approval?",
+      "relevant_doc_indices": [
+        96,
+        97
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "Accurately states that HotApp's rights terminate immediately upon sale of control or substantially all assets without prior written DSS approval",
+      "latency_ms": 5611.54,
+      "answer": "The Developer’s (HotApp’s) rights under the DSS agreement end immediately – they are terminated – if HotApp sells or transfers control, a majority or a controlling interest, or substantially all of its assets, **unless** an assignment of those rights has first been approved in writing by DSS【Chunk 1】【Chunk 2】."
+    },
+    {
+      "id": "q22",
+      "category": "answerable",
+      "contract": "PlayboyEnterprisesInc",
+      "clause_type": "Rofr/Rofo/Rofn",
+      "thread_id": "eval-agent-1795867550-q22",
+      "question": "How many days right of first refusal must EFS give Playboy Licensees before manufacturing EFS Produced Merchandise?",
+      "relevant_doc_indices": [
+        117
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the seven‑day right of first refusal as specified in the reference.",
+      "latency_ms": 4383.63,
+      "answer": "EFS must give Playboy Licensees a seven‑day (7 day) right of first refusal before proceeding with the manufacture of EFS Produced Merchandise. [Chunk 1]"
+    },
+    {
+      "id": "q23",
+      "category": "answerable",
+      "contract": "PlayboyEnterprisesInc",
+      "clause_type": "Promotional Inserts",
+      "thread_id": "eval-agent-1795867550-q23",
+      "question": "How many monthly catalog inserts and packaging onserts must EFS include for Playboy?",
+      "relevant_doc_indices": [
+        122
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the up-to-two monthly catalog inserts and packaging onserts as specified in the reference.",
+      "latency_ms": 4383.33,
+      "answer": "EFS must include up to two (2) catalog inserts per month and up to two (2) packaging onserts per month【Chunk 1】."
+    },
+    {
+      "id": "q24",
+      "category": "answerable",
+      "contract": "PlayboyEnterprisesInc",
+      "clause_type": "Audit Report",
+      "thread_id": "eval-agent-1795867550-q24",
+      "question": "By what annual deadline must EFS deliver its SAS 70 Type II compliance report under the Playboy e-commerce agreement?",
+      "relevant_doc_indices": [
+        129
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the deadline as December 31 of each year, matching the contract excerpt.",
+      "latency_ms": 4220.5,
+      "answer": "The SAS 70 Type II compliance report must be delivered by **December 31 of each year** for the one‑year period ending September 30 of that year. [Chunk 1]"
+    },
+    {
+      "id": "q25",
+      "category": "hard_hidden",
+      "contract": "PlayboyEnterprisesInc",
+      "clause_type": "Service Model Transition",
+      "thread_id": "eval-agent-1795867550-q25",
+      "question": "When and with how much advance notice can EFS request transitioning from licensee to a vendor service model for Playboy?",
+      "relevant_doc_indices": [
+        114
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the six‑month notice and that the request can be made at any time after the third anniversary, matching the reference.",
+      "latency_ms": 6214.12,
+      "answer": "EFS may request the transition to a vendor “service model” only after the third anniversary of the Effective Date, and it must give the Client six (6) months’ prior written notice. [Chunk 1]"
+    },
+    {
+      "id": "q26",
+      "category": "hard_hidden",
+      "contract": "PlayboyEnterprisesInc",
+      "clause_type": "Anti-Assignment",
+      "thread_id": "eval-agent-1795867550-q26",
+      "question": "Under what conditions may EFS assign the Playboy Commerce agreement to an asset acquirer without prior written consent?",
+      "relevant_doc_indices": [
+        133,
+        134
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer accurately lists all four conditions and the competitor restriction as stated in the reference.",
+      "latency_ms": 8068.83,
+      "answer": "EFS may assign the Playboy Commerce agreement to an acquirer of all or substantially all of its assets without the Client’s prior written consent only if, in the Client’s reasonable judgment:  \n\n1. Key EFS management (as defined by the Client at the time of acquisition) will remain with EFS indefinitely, or any replacement management is reasonably acceptable to the Client and is no less experienced than the existing team【Chunk 1】;  \n2. The acquirer can demonstrate sufficient financial resources and the intention to invest in growing the Playboy Commerce Business, including having a net‑worth at least equal to EFS’s as of the Effective Date【Chunk 2】;  \n3. The assignment will not have a detrimental impact on the Playboy Commerce Business or the Client’s other businesses【Chunk 2】; and  \n4. The acquirer is able to honor all financial terms of the agreement and assume all of EFS’s obligations hereunder【Chunk 2】.  \n\nAdditionally, EFS may not assign the agreement without consent to a competitor of the Client or any of the Client’s businesses【Chunk 2】."
+    },
+    {
+      "id": "q27",
+      "category": "answerable",
+      "contract": "WestPharmaceuticalServicesInc",
+      "clause_type": "Term",
+      "thread_id": "eval-agent-1795867550-q27",
+      "question": "What are the Effective Date and Termination Date of the ExxonMobil and West Pharmaceutical Global Master Supply Agreement?",
+      "relevant_doc_indices": [
+        140
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the Effective Date and Termination Date as given in the reference.",
+      "latency_ms": 6621.84,
+      "answer": "The Effective Date of the Global Master Supply Agreement is **January 1, 2019**, and the Termination Date is **December 31, 2023**【Chunk 4】."
+    },
+    {
+      "id": "q28",
+      "category": "answerable",
+      "contract": "WestPharmaceuticalServicesInc",
+      "clause_type": "Audit Rights",
+      "thread_id": "eval-agent-1795867550-q28",
+      "question": "How often may West Pharmaceutical conduct manufacturing and quality audits at ExxonMobil production sites?",
+      "relevant_doc_indices": [
+        142
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the audit frequency as no more than once every three years, matching the reference.",
+      "latency_ms": 4589.65,
+      "answer": "West Pharmaceutical may conduct manufacturing and quality audits at a given site no more than once every three years. [Chunk 1]"
+    },
+    {
+      "id": "q29",
+      "category": "answerable",
+      "contract": "WestPharmaceuticalServicesInc",
+      "clause_type": "Payment Terms",
+      "thread_id": "eval-agent-1795867550-q29",
+      "question": "Within how many days from invoice date must Buyer credit ExxonMobil bank account in full?",
+      "relevant_doc_indices": [
+        159
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the 30‑day payment period as specified in the reference.",
+      "latency_ms": 4615.98,
+      "answer": "Within 30 days from the invoice date the Buyer must credit ExxonMobil’s bank account in full. [Chunk 1]"
+    },
+    {
+      "id": "q30",
+      "category": "hard_hidden",
+      "contract": "WestPharmaceuticalServicesInc",
+      "clause_type": "Governing Law",
+      "thread_id": "eval-agent-1795867550-q30",
+      "question": "Which Texas county courts have exclusive venue and does CISG apply in the ExxonMobil and West Pharmaceutical agreement?",
+      "relevant_doc_indices": [
+        151
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly identifies Harris County district courts (and the Southern District of Texas) as exclusive venue and states that CISG is excluded, matching the reference.",
+      "latency_ms": 7270.29,
+      "answer": "The parties grant exclusive jurisdiction and venue to the district courts of **Harris County, Texas** (or, alternatively, the U.S. District Court for the Southern District of Texas, Houston Division) [Chunk 1]. They also expressly **exclude the application of the U.N. Convention on Contracts for the International Sale of Goods (CISG)** [Chunk 1]."
+    },
+    {
+      "id": "q31",
+      "category": "hard_hidden",
+      "contract": "WestPharmaceuticalServicesInc",
+      "clause_type": "Risk of Loss",
+      "thread_id": "eval-agent-1795867550-q31",
+      "question": "When do title and risk of loss transfer for US-sourced ExxonMobil products shipped overseas by marine vessel?",
+      "relevant_doc_indices": [
+        153
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states that title and risk of loss transfer when the vessel first crosses the outer boundary of the U.S. EEZ, matching the reference.",
+      "latency_ms": 6840.11,
+      "answer": "Title and risk of loss transfer from ExxonMobil to the buyer at the moment the delivering marine vessel first crosses the outer boundary of the United States Exclusive Economic Zone (EEZ) – i.e., when it leaves the U.S. EEZ (approximately 200 nautical miles from the coast)【Chunk 1】"
+    },
+    {
+      "id": "q32",
+      "category": "answerable",
+      "contract": "CardlyticsInc",
+      "clause_type": "Maintenance Period",
+      "thread_id": "eval-agent-1795867550-q32",
+      "question": "How is the Maintenance Period defined in the Cardlytics and Bank of America software agreement?",
+      "relevant_doc_indices": [
+        165
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer accurately restates the Maintenance Period definition from the reference without errors.",
+      "latency_ms": 4791.07,
+      "answer": "The agreement states that, unless a Product License Schedule provides a different term, the Maintenance Period is “twenty‑four (24) hours per day, seven (7) per week, including Bank of America holidays.” [Chunk 1]"
+    },
+    {
+      "id": "q33",
+      "category": "answerable",
+      "contract": "CardlyticsInc",
+      "clause_type": "Post-Termination Services",
+      "thread_id": "eval-agent-1795867550-q33",
+      "question": "What is the maximum number of calendar days for business transition assistance after termination of the Cardlytics and Bank of America agreement?",
+      "relevant_doc_indices": [
+        173
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the 180‑day maximum and the written‑agreement exception, matching the reference.",
+      "latency_ms": 4169.29,
+      "answer": "The agreement limits business‑transition assistance to a maximum of one hundred eighty [180] calendar days after termination, unless the parties agree otherwise in writing. [Chunk 1]"
+    },
+    {
+      "id": "q34",
+      "category": "answerable",
+      "contract": "CardlyticsInc",
+      "clause_type": "Insurance",
+      "thread_id": "eval-agent-1795867550-q34",
+      "question": "What minimum Technology Errors and Omissions and Umbrella insurance coverage limits must Cardlytics maintain for Bank of America?",
+      "relevant_doc_indices": [
+        178
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the $5,000,000 minimum for Technology Errors and Omissions and the $5,000,000 per‑occurrence limit for Umbrella/Excess coverage as per the reference.",
+      "latency_ms": 5573.73,
+      "answer": "Cardlytics must keep Technology Errors and Omissions insurance with minimum limits of **$5,000,000**, and it must also have Umbrella/Excess liability coverage with a **$5,000,000 per‑occurrence** limit [Chunk 1]."
+    },
+    {
+      "id": "q35",
+      "category": "hard_hidden",
+      "contract": "CardlyticsInc",
+      "clause_type": "Security Breach Notification",
+      "thread_id": "eval-agent-1795867550-q35",
+      "question": "How fast must Cardlytics alert Bank of America InfoSafe upon discovering a suspected compromise of customer nonpublic personal information?",
+      "relevant_doc_indices": [
+        187
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the notification must be immediate, within 24 hours or as soon thereafter as practicable, matching the reference.",
+      "latency_ms": 4432.27,
+      "answer": "Cardlytics must notify Bank of America’s InfoSafe **immediately – within 24 hours or as soon thereafter as practicable** after discovering any suspected breach or compromise of non‑public personal information. [Chunk 1]"
+    },
+    {
+      "id": "q36",
+      "category": "hard_hidden",
+      "contract": "CardlyticsInc",
+      "clause_type": "Termination Refund",
+      "thread_id": "eval-agent-1795867550-q36",
+      "question": "What fee recovery does Bank of America get if it terminates Cardlytics Maintenance Services for material default?",
+      "relevant_doc_indices": [
+        172
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states that Bank of America receives a pro rata refund of maintenance fees upon terminating for material default, matching the reference.",
+      "latency_ms": 5000.02,
+      "answer": "Bank of America is entitled to a pro‑rata refund of the maintenance fees it has paid if it terminates the Cardlytics Maintenance Services for the Supplier’s material default. [Chunk 1]"
+    },
+    {
+      "id": "q37",
+      "category": "answerable",
+      "contract": "ParatekPharmaceuticalsInc",
+      "clause_type": "Manufacturing Facility",
+      "thread_id": "eval-agent-1795867550-q37",
+      "question": "At which Swiss facility does CARBOGEN AMCIS AG manufacture Product for Paratek Pharmaceuticals?",
+      "relevant_doc_indices": [
+        195
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the Swiss facility (Bubendorf) where CARBOGEN AMCIS AG manufactures the product, matching the reference.",
+      "latency_ms": 3768.73,
+      "answer": "CARBOGEN AMCIS AG manufactures the product at its facility in Bubendorf, Switzerland [Chunk 4]."
+    },
+    {
+      "id": "q38",
+      "category": "answerable",
+      "contract": "ParatekPharmaceuticalsInc",
+      "clause_type": "Insurance Notice",
+      "thread_id": "eval-agent-1795867550-q38",
+      "question": "How many days prior written notice must be given before cancelling or changing insurance policies in the Paratek and CARBOGEN AMCIS agreement?",
+      "relevant_doc_indices": [
+        212
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the 30‑day written notice requirement as in the reference.",
+      "latency_ms": 4108.28,
+      "answer": "The parties must give written notice at least 30 days before any cancellation or material change to the insurance policies. [Chunk 1]"
+    },
+    {
+      "id": "q39",
+      "category": "answerable",
+      "contract": "ParatekPharmaceuticalsInc",
+      "clause_type": "Arbitration",
+      "thread_id": "eval-agent-1795867550-q39",
+      "question": "Which international arbitration rules govern unresolved disputes between Paratek Pharmaceuticals and CARBOGEN AMCIS AG?",
+      "relevant_doc_indices": [
+        214
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states that disputes are governed by the ICC Rules of Arbitration, matching the reference.",
+      "latency_ms": 4538.63,
+      "answer": "The unresolved disputes are to be resolved by confidential arbitration under the ICC Rules of Arbitration. [Chunk 1]"
+    },
+    {
+      "id": "q40",
+      "category": "hard_hidden",
+      "contract": "ParatekPharmaceuticalsInc",
+      "clause_type": "Uncapped Liability",
+      "thread_id": "eval-agent-1795867550-q40",
+      "question": "Are special, consequential, punitive, or lost-profit damages recoverable under Section 13.4 of the Paratek and CARBOGEN AMCIS Outsourcing Agreement?",
+      "relevant_doc_indices": [
+        208
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states that such damages are not recoverable per Section 13.4.",
+      "latency_ms": 5815.16,
+      "answer": "No. Section 13.4 expressly states that neither party shall be liable for any special, consequential, punitive, incidental or indirect damages, or lost‑profit damages [Chunk 1]."
+    },
+    {
+      "id": "q41",
+      "category": "answerable",
+      "contract": "AudibleInc",
+      "clause_type": "Late Payment Interest",
+      "thread_id": "eval-agent-1795867550-q41",
+      "question": "What monthly interest rate applies to overdue payments under the Amazon and Audible Co-Branding Agreement?",
+      "relevant_doc_indices": [
+        224
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the interest rate as the lesser of 1.5% per month or the maximum legal rate, matching the reference.",
+      "latency_ms": 4687.22,
+      "answer": "The agreement provides that overdue payments accrue interest at the lesser of 1½ percent (1.5 %) per month or the maximum legal rate permitted under the controlling laws [Chunk 1]."
+    },
+    {
+      "id": "q42",
+      "category": "answerable",
+      "contract": "AudibleInc",
+      "clause_type": "Audit Rights",
+      "thread_id": "eval-agent-1795867550-q42",
+      "question": "How long after the Term must Audible and Amazon retain audit records and how many days advance written notice is needed for an audit?",
+      "relevant_doc_indices": [
+        232
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the one-year post‑term record retention and the 30‑day prior written notice requirement for audits.",
+      "latency_ms": 6018.94,
+      "answer": "Audible and Amazon must keep their audit records for the duration of the Term and for one (1) year after the Term ends, and an audit can be initiated only after the other party gives at least thirty (30) days’ prior written notice【Chunk 1】."
+    },
+    {
+      "id": "q43",
+      "category": "hard_hidden",
+      "contract": "AudibleInc",
+      "clause_type": "Post-Termination Services",
+      "thread_id": "eval-agent-1795867550-q43",
+      "question": "For how many months after termination must Audible keep operating the Mirror Company Site at ACSI option to transition users smoothly?",
+      "relevant_doc_indices": [
+        237
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the up-to-six-month period as specified in the reference.",
+      "latency_ms": 5863.91,
+      "answer": "Audible must continue operating the Mirror Company Site for up to six (6) months after termination, at ACSI’s option, to facilitate a smooth user transition. [Chunk 1]"
+    },
+    {
+      "id": "q44",
+      "category": "answerable",
+      "contract": "IntegrityFunds",
+      "clause_type": "Term and Renewal",
+      "thread_id": "eval-agent-1795867550-q44",
+      "question": "Until what date does the Integrity Short Term Government Fund Distribution Agreement initially continue before annual Board renewals?",
+      "relevant_doc_indices": [
+        266
+      ],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 0,
+      "has_inline_citation": true,
+      "passed": true,
+      "judge_reason": "The answer correctly states the initial term ends on January 18, 2022, matching the reference.",
+      "latency_ms": 5226.52,
+      "answer": "The agreement initially continues until **January 18, 2022** before it may be renewed annually by the Fund’s Board [Chunk 2]."
+    },
+    {
+      "id": "q45",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "Crypto Settlement",
+      "thread_id": "eval-agent-1795867550-q45",
+      "question": "What cryptocurrency or stablecoin wallet settlement procedures are specified for cross-border payments?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated the information was not found in the documents",
+      "latency_ms": 12299.6,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q46",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "ESG Emissions",
+      "thread_id": "eval-agent-1795867550-q46",
+      "question": "What carbon-neutrality targets and annual Scope 3 greenhouse gas emissions reporting penalties apply to suppliers?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated no relevant information was found in the documents",
+      "latency_ms": 14283.01,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q47",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "HIPAA BAA",
+      "thread_id": "eval-agent-1795867550-q47",
+      "question": "What HIPAA Business Associate Agreement terms govern electronic protected health information breach reporting?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated no relevant information was found, without fabricating details.",
+      "latency_ms": 11014.91,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q48",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "Labor Union",
+      "thread_id": "eval-agent-1795867550-q48",
+      "question": "What collective bargaining or labor union neutrality obligations bind the contracting parties?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated no relevant information was found, without fabricating details",
+      "latency_ms": 11391.82,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q49",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "AI Training Opt-Out",
+      "thread_id": "eval-agent-1795867550-q49",
+      "question": "What generative AI foundation model training restrictions or synthetic data opt-out clauses appear in the agreements?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated that no relevant information was found in the documents",
+      "latency_ms": 11586.5,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q50",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "Antitrust Breakup",
+      "thread_id": "eval-agent-1795867550-q50",
+      "question": "What antitrust merger clearance reverse breakup fee applies if HSR regulatory approval is denied?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated no relevant information was found and did not fabricate any details",
+      "latency_ms": 10344.9,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q51",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "FedRAMP Crypto",
+      "thread_id": "eval-agent-1795867550-q51",
+      "question": "What FedRAMP High authorization or FIPS 140-3 cryptographic module requirements govern cloud deployments?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant correctly stated that the information was not found in the documents without fabricating details.",
+      "latency_ms": 11961.0,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q52",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "Sovereign Immunity",
+      "thread_id": "eval-agent-1795867550-q52",
+      "question": "What sovereign immunity waiver or UNCITRAL investor-state arbitration rules apply to state-owned enterprises?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant correctly stated that the information was not found in the documents without fabricating details.",
+      "latency_ms": 12543.78,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q53",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "ITAR CFIUS",
+      "thread_id": "eval-agent-1795867550-q53",
+      "question": "What ITAR defense export control registration or CFIUS national security mitigation conditions apply?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated no relevant information was found in the documents",
+      "latency_ms": 14205.06,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q54",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "Consumer Installment",
+      "thread_id": "eval-agent-1795867550-q54",
+      "question": "What statutory cooling-off refund period applies to consumer door-to-door retail installment sales?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated no relevant information was found in the documents",
+      "latency_ms": 11724.1,
+      "answer": "I couldn't find any relevant information in the documents."
+    },
+    {
+      "id": "q55",
+      "category": "unanswerable",
+      "contract": "OutOfScope",
+      "clause_type": "Biometric BIPA",
+      "thread_id": "eval-agent-1795867550-q55",
+      "question": "What biometric facial recognition retention schedule and Illinois BIPA consent rules are defined?",
+      "relevant_doc_indices": [],
+      "status_code": 200,
+      "route": "retrieve",
+      "retry_count": 2,
+      "has_inline_citation": false,
+      "passed": true,
+      "judge_reason": "Assistant explicitly stated the information was not found in the documents",
+      "latency_ms": 11291.64,
+      "answer": "I couldn't find any relevant information in the documents."
+    }
+  ]
+}

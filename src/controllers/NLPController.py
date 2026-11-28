@@ -1,7 +1,7 @@
 from .BaseController import BaseController
 from models.db_schemes import Project,DataChunk
 from stores.llm.LLMEnums import DocumentTypeEnum
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Dict, Any
 import json
 from .RetrievalFusion import reciprocal_rank_fusion
 
@@ -67,6 +67,7 @@ class NLPController(BaseController):
         use_reranker: bool = False,
         rerank_top_k: int = 25,
         rerank_score_threshold: Optional[float] = None,
+        metadata_filter: Optional[Dict[str,Any]]= None
     ):
         
         # 1-> get collection name 
@@ -80,7 +81,8 @@ class NLPController(BaseController):
             results=await self.vectordb_client.sparse_search(
                 collection_name=collection_name,
                 text=text,
-                limit=retrieval_limit
+                limit=retrieval_limit,
+                metadata_filter=metadata_filter
             )
             if not results :
                 return False
@@ -107,7 +109,8 @@ class NLPController(BaseController):
         dense_results=await self.vectordb_client.search_by_vector(
             collection_name=collection_name,
             vector=query_vector,
-            limit=candidate_limit
+            limit=candidate_limit,
+            metadata_filter=metadata_filter
         )
         if search_mode=='dense':
             if not dense_results:
@@ -124,6 +127,7 @@ class NLPController(BaseController):
             collection_name=collection_name,
             text=text,
             limit=candidate_limit,
+            metadata_filter=metadata_filter
         )
         # 4-> hybrid search: combine dense and sparse candidates via RRF
         fused_results=reciprocal_rank_fusion(
@@ -155,6 +159,7 @@ class NLPController(BaseController):
         use_reranker: bool = False,
         rerank_top_k: int = 25,
         rerank_score_threshold: Optional[float] = None,
+        metadata_filter: Optional[Dict[str,Any]]= None
     ):
         
         answer, full_prompt, chat_history=None,None,None
@@ -168,6 +173,7 @@ class NLPController(BaseController):
             use_reranker=use_reranker,
             rerank_top_k=rerank_top_k,
             rerank_score_threshold=rerank_score_threshold,
+            metadata_filter=metadata_filter
         )
 
         if not retrived_documents or len (retrived_documents) == 0:

@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "71512ed4-29fe-4609-94e6-774bf90fb23c",
+		"name": "RAG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "56463490",
+		"_collection_link": "https://ahmedrizk1425-9848478.postman.co/workspace/Ahmed-Rizk's-Workspace~64b9b5cc-4023-4315-8479-030b191a5a99/collection/56463490-71512ed4-29fe-4609-94e6-774bf90fb23c?action=share&source=collection_link&creator=56463490"
+	},
+	"item": [
+		{
+			"name": "welcome-request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields APP_NAME and APP_VERSION\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.all.keys('APP_NAME', 'APP_VERSION');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate that APP_VERSION is in a valid format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.have.property('APP_VERSION');",
+							"    pm.expect(responseData.APP_VERSION).to.match(/^\\d+\\.\\d+\\.\\d+(-\\S+)?(\\+\\S+)?$/, \"APP_VERSION should follow semantic versioning format (e.g., x.y.z or x.y.z-alpha+build)\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/api/v1/",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/ahmed-rizk/Desktop/wiki.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api}}/api/v1/data/upload/1",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"data",
+						"upload",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    // \"file_id\":\"zveeh8uxngugmant_tree.txt\",\n    \"chunk_size\":500,\n    \"overlap_size\":50,\n    \"do_reset\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/v1/data/process/1",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"data",
+						"process",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nlp_index_push",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"do_reset\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/v1/nlp/index/push/1",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"nlp",
+						"index",
+						"push",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nlp_index_info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/api/v1/nlp/index/info/99",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"nlp",
+						"index",
+						"info",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nlp_index_search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"text\": \"hello\",\n  \"limit\": 5,\n  \"search_mode\": \"hybrid\",\n  \"use_reranker\": true,\n  \"rerank_top_n\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/v1/nlp/index/search/99",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"nlp",
+						"index",
+						"search",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nlp_rag_answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"text\": \"من هو العالم المسلم الملقب بـ «أول عالم حقيقي في التاريخ» وبماذا اشتهر؟\",\n  \"limit\": 5,\n  \"search_mode\": \"hybrid\",\n  \"use_reranker\": true,\n  \"rerank_top_n\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/v1/nlp/index/answer/1",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"nlp",
+						"index",
+						"answer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Anget",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"text\": \"Explain how the LCA algorithm works in this code\",\n  \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/api/v1/nlp/index/answer/1",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"nlp",
+						"index",
+						"answer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://0.0.0.0:5000"
+		}
+	]
+}

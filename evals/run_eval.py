@@ -134,16 +134,26 @@ async def setup_eval_project(
         )
     )
 
+    def _extract_source(doc_text: str) -> str:
+        """Extract the leading [ContractName] tag from a CUAD chunk as source."""
+        if doc_text.startswith("[") and "]" in doc_text:
+            return doc_text[1 : doc_text.index("]")].strip()
+        return "cuad_eval_corpus.txt"
+
     chunk_records = [
         DataChunk(
             chunk_text=text,
-            chunk_metadata={"doc_index": idx},
+            chunk_metadata={
+                "doc_index": idx,
+                "source": _extract_source(text),
+            },
             chunk_order=idx + 1,
             chunk_project_id=project.project_id,
             chunk_asset_id=asset.asset_id,
         )
         for idx, text in enumerate(documents)
     ]
+    
     await chunk_model.insert_many_chunks(chunks=chunk_records)
 
     stored_chunks = await chunk_model.get_project_chunks(

@@ -4,7 +4,7 @@ from ..VectorDBInterface import VectorDBInterface
 from ..VectorDBEnums import DistanceMethodEnums
 from models.db_schemes import RetrievedDocument
 import logging
-from typing import List
+from typing import List, Any, Dict, Optional
 
 class QdrantDBProvider(VectorDBInterface):
 
@@ -123,12 +123,27 @@ class QdrantDBProvider(VectorDBInterface):
             
         return True
     
-    async def search_by_vector(self, collection_name:str, vector:list, limit:int=5) -> List[RetrievedDocument]:
+    async def search_by_vector(self, collection_name:str, vector:list, limit:int=5, metadata_filter:Optional[Dict[str,Any]]=None) -> List[RetrievedDocument]:
+        
+        filter=None
+        if metadata_filter:
+            filter=models.Filter(
+                must=[
+                    models.FieldCondition(
+                        key=f"metadata.{key}",
+                        match=models.MatchValue(value=value)
+                    )
+                    for key,value in metadata_filter.items()
+                ]
+            )
+
         results = self.client.search(
             collection_name=collection_name,
             query_vector=vector,
-            limit=limit
+            limit=limit, 
+            query_filter=filter
         )
+
         if not results or len(results) == 0:
             return None
         
